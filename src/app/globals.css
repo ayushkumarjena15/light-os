@@ -364,19 +364,7 @@ html.lenis body {
   }
 }
 
-@keyframes moonPulse {
 
-  0%,
-  100% {
-    opacity: 0.55;
-    transform: translate(-50%, -50%) scale(1);
-  }
-
-  50% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.07);
-  }
-}
 
 @keyframes orbSpin {
   from {

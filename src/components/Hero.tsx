@@ -21,7 +21,7 @@ type Star = {
 
 export function Hero() {
     const sectionRef = useRef<HTMLElement>(null);
-    const moonRef = useRef<HTMLDivElement>(null);
+
     const lampsRef = useRef<(HTMLDivElement | null)[]>([]);
     const scrollIndRef = useRef<HTMLDivElement>(null);
     const carRef = useRef<HTMLDivElement>(null);
@@ -53,20 +53,7 @@ export function Hero() {
         if (!section) return;
         const triggers: ReturnType<typeof ScrollTrigger.create>[] = [];
 
-        // Moon parallax
-        if (moonRef.current) {
-            gsap.to(moonRef.current, {
-                y: 250,
-                opacity: 0,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top top",
-                    end: "bottom top",
-                    scrub: 1,
-                },
-            });
-        }
+
 
         // Scroll indicator fade
         if (scrollIndRef.current) {
@@ -186,27 +173,7 @@ export function Hero() {
                 ))}
             </div>
 
-            {/* Moon */}
-            <div ref={moonRef} className="absolute top-[8%] right-[5%] md:top-[10%] md:right-[15%] z-[2]">
-                <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180px] md:w-[280px] h-[180px] md:h-[280px] rounded-full animate-[moonPulse_5s_ease-in-out_infinite]"
-                    style={{
-                        background: "radial-gradient(circle, rgba(255,123,0,0.03) 0%, rgba(255,123,0,0.01) 40%, transparent 70%)",
-                    }}
-                />
-                <div
-                    className="w-[70px] md:w-[110px] h-[70px] md:h-[110px] rounded-full relative overflow-hidden"
-                    style={{
-                        background: "radial-gradient(circle at 35% 35%, #ffb347, #ff7b00 40%, #8a3600 80%, #3a1600 100%)",
-                        boxShadow: "0 0 20px rgba(255,123,0,0.1), 0 0 40px rgba(255,123,0,0.05), inset -15px -15px 30px rgba(0,0,0,0.7)",
-                    }}
-                >
-                    <div className="absolute w-[20%] h-[20%] rounded-full bg-[rgba(0,0,0,0.15)] top-[25%] left-[50%]" style={{ filter: "blur(2px)" }} />
-                    <div className="absolute w-[30%] h-[25%] rounded-full bg-[rgba(0,0,0,0.12)] top-[50%] left-[20%]" style={{ filter: "blur(3px)" }} />
-                    <div className="absolute w-[15%] h-[15%] rounded-full bg-[rgba(0,0,0,0.18)] top-[60%] left-[65%]" style={{ filter: "blur(1.5px)" }} />
-                    <div className="absolute w-[35%] h-[40%] rounded-full bg-[rgba(255,255,255,0.08)] top-[-10%] left-[-10%]" style={{ filter: "blur(4px)" }} />
-                </div>
-            </div>
+
 
             {/* Hero Content */}
             <div className="relative z-[5] w-[95%] md:w-[90%] max-w-6xl mx-auto px-4 md:px-6 text-center mt-0">
