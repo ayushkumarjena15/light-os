@@ -1,0 +1,13 @@
+
+> lightos-app@0.1.0 lint
+> eslint
+
+
+C:\Users\ahaly\Desktop\lightOs landing\lightos-app\src\components\SmoothScroll.tsx
+  26:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\ahaly\Desktop\lightOs landing\lightos-app\src\components\ui\limelight-nav.tsx
+  9:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 2 problems (2 errors, 0 warnings)
+
