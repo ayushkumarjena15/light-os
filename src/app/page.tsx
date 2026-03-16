@@ -10,7 +10,6 @@ import { CursorGlow } from "@/components/CursorGlow";
 export default function Home() {
   return (
     <>
-      <CursorGlow />
       <Navbar />
       <main>
         <Hero />
