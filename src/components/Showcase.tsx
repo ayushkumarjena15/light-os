@@ -33,11 +33,11 @@ export function Showcase() {
     }, []);
 
     return (
-        <section id="showcase" className="relative z-[2] py-[120px] overflow-hidden" style={{ background: "black" }}>
+        <section id="showcase" className="relative z-[20] py-[120px] overflow-hidden">
             {/* Section separator */}
-            <div className="absolute top-0 left-0 right-0 h-px pointer-events-none" style={{ background: "linear-gradient(90deg, transparent, rgba(201,150,61,0.15), rgba(154,104,48,0.08), transparent)" }} />
+            <div className="absolute top-0 left-0 right-0 h-px pointer-events-none" style={{ background: "linear-gradient(90deg, transparent, rgba(59,130,246,0.15), rgba(37,99,235,0.08), transparent)" }} />
             {/* Ambient glow */}
-            <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 60% 40% at 50% 80%, rgba(201,150,61,0.04) 0%, transparent 60%)" }} />
+            <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 60% 40% at 50% 80%, rgba(59,130,246,0.04) 0%, transparent 60%)" }} />
             <div ref={ref} className="max-w-[1200px] mx-auto px-6">
                 {/* Header */}
                 <motion.div
@@ -60,13 +60,13 @@ export function Showcase() {
                     initial={{ opacity: 0, y: 60, scale: 0.94 }}
                     animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
                     transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-                    className="max-w-[920px] mx-auto rounded-3xl overflow-hidden border border-[rgba(180,148,72,0.12)]"
+                    className="max-w-[920px] mx-auto rounded-3xl overflow-hidden border border-[rgba(59,130,246,0.12)]"
                     style={{
-                        boxShadow: "0 30px 100px rgba(0,0,0,0.5), 0 0 60px rgba(201,150,61,0.04)",
+                        boxShadow: "0 30px 100px rgba(0,0,0,0.5), 0 0 60px rgba(59,130,246,0.04)",
                     }}
                 >
                     {/* Title Bar */}
-                    <div className="flex items-center px-[18px] py-3.5 border-b border-[rgba(180,148,72,0.08)]" style={{ background: "linear-gradient(180deg, #1a1610, #141009)" }}>
+                    <div className="flex items-center px-[18px] py-3.5 border-b border-[rgba(59,130,246,0.08)]" style={{ background: "linear-gradient(180deg, #1a1610, #141009)" }}>
                         <div className="flex gap-2">
                             <motion.span whileHover={{ scale: 1.3 }} className="w-3 h-3 rounded-full cursor-pointer" style={{ background: "#ff5f57", boxShadow: "0 0 8px rgba(255,95,87,0.3)" }} />
                             <motion.span whileHover={{ scale: 1.3 }} className="w-3 h-3 rounded-full cursor-pointer" style={{ background: "#febc2e", boxShadow: "0 0 8px rgba(254,188,46,0.3)" }} />
@@ -90,15 +90,14 @@ export function Showcase() {
                                 transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
                                 className="absolute -top-1/2 -left-1/2 w-[200%] h-[200%]"
                                 style={{
-                                    background: "radial-gradient(circle at 25% 35%, rgba(201,150,61,0.05) 0%, transparent 40%), radial-gradient(circle at 75% 65%, rgba(154,104,48,0.03) 0%, transparent 40%)",
+                                    background: "radial-gradient(circle at 25% 35%, rgba(59,130,246,0.05) 0%, transparent 40%), radial-gradient(circle at 75% 65%, rgba(37,99,235,0.03) 0%, transparent 40%)",
                                 }}
                             />
                         </div>
 
-                        {/* Aurora line — warm gold */}
                         <div
                             className="absolute bottom-[30%] left-0 right-0 h-px blur-[1px]"
-                            style={{ background: "linear-gradient(90deg, transparent, rgba(201,150,61,0.18), rgba(154,104,48,0.1), transparent)" }}
+                            style={{ background: "linear-gradient(90deg, transparent, rgba(59,130,246,0.18), rgba(37,99,235,0.1), transparent)" }}
                         />
 
                         {/* Clock */}
@@ -123,7 +122,7 @@ export function Showcase() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ delay: 1.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                            className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-1.5 px-[18px] py-2.5 rounded-3xl border border-[rgba(180,148,72,0.1)] backdrop-blur-xl"
+                            className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-1.5 px-[18px] py-2.5 rounded-3xl border border-[rgba(59,130,246,0.1)] backdrop-blur-xl"
                             style={{ background: "rgba(20,16,10,0.5)" }}
                         >
                             {dockApps.map((app, i) => {
@@ -138,14 +137,14 @@ export function Showcase() {
                                         transition={{ type: "spring", stiffness: 400, damping: 25 }}
                                         onMouseEnter={() => setHoveredDock(i)}
                                         onMouseLeave={() => setHoveredDock(null)}
-                                        className="dock-item relative w-[46px] h-[46px] flex items-center justify-center text-[22px] rounded-lg cursor-pointer hover:bg-[rgba(201,150,61,0.08)]"
+                                        className="dock-item relative w-[46px] h-[46px] flex items-center justify-center text-[22px] rounded-lg cursor-pointer hover:bg-[rgba(59,130,246,0.08)]"
                                     >
                                         {app.emoji}
                                         {/* Tooltip */}
                                         <motion.span
                                             initial={{ opacity: 0, scale: 0.8, y: 0 }}
                                             animate={hoveredDock === i ? { opacity: 1, scale: 1, y: -4 } : { opacity: 0, scale: 0.8, y: 0 }}
-                                            className="absolute -top-8 left-1/2 -translate-x-1/2 text-[11px] text-[var(--color-text-primary)] bg-[rgba(20,16,10,0.9)] px-2.5 py-1 rounded-md whitespace-nowrap border border-[rgba(201,150,61,0.12)] pointer-events-none"
+                                            className="absolute -top-8 left-1/2 -translate-x-1/2 text-[11px] text-[var(--color-text-primary)] bg-[rgba(20,16,10,0.9)] px-2.5 py-1 rounded-md whitespace-nowrap border border-[rgba(59,130,246,0.12)] pointer-events-none"
                                         >
                                             {app.label}
                                         </motion.span>

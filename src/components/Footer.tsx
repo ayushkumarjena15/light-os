@@ -29,7 +29,7 @@ export function Footer() {
     const isInView = useInView(ref, { once: true, amount: 0.2 });
 
     return (
-        <footer ref={ref} className="relative z-[2] pt-[72px] pb-9 border-t border-[rgba(180,148,72,0.08)]" style={{ background: "black" }}>
+        <footer ref={ref} className="relative z-[20] pt-[72px] pb-9 border-t border-[rgba(59,130,246,0.2)] bg-[#0a0a0f]">
             <div className="max-w-[1200px] mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -40,12 +40,12 @@ export function Footer() {
                     {/* Brand */}
                     <div className="flex flex-col gap-2.5">
                         <div className="flex items-center gap-2">
-                            <span className="text-[28px]" style={{ filter: "drop-shadow(0 0 8px rgba(201,150,61,0.4))" }}>💡</span>
+                            <span className="text-[28px]" style={{ filter: "drop-shadow(0 0 8px rgba(59,130,246,0.4))" }}>💡</span>
                             <span className="font-[var(--font-heading)] text-xl font-bold text-[var(--color-text-primary)]">
                                 Light<span className="gradient-text">OS</span>
                             </span>
                         </div>
-                        <p className="text-sm text-[var(--color-text-muted)] max-w-[240px] leading-relaxed">
+                        <p className="text-sm text-[rgba(255,255,255,0.55)] max-w-[240px] leading-relaxed">
                             Illuminating the future of computing.
                         </p>
                     </div>
@@ -60,15 +60,15 @@ export function Footer() {
                                 transition={{ delay: ci * 0.1 + 0.2, duration: 0.6 }}
                                 className="flex flex-col gap-3"
                             >
-                                <h4 className="font-[var(--font-heading)] text-sm font-semibold text-[var(--color-text-primary)] mb-1">
+                                <h4 className="font-[var(--font-heading)] text-sm font-semibold text-white mb-1">
                                     {col.title}
                                 </h4>
                                 {col.links.map((link, li) => (
                                     <motion.a
                                         key={li}
                                         href="#"
-                                        whileHover={{ x: 3, color: "#c9963d" }}
-                                        className="text-sm text-[var(--color-text-muted)] transition-colors duration-200"
+                                        whileHover={{ x: 3, color: "#3b82f6" }}
+                                        className="text-sm text-[rgba(255,255,255,0.5)] transition-colors duration-200"
                                     >
                                         {link}
                                     </motion.a>
@@ -83,9 +83,9 @@ export function Footer() {
                     initial={{ opacity: 0 }}
                     animate={isInView ? { opacity: 1 } : {}}
                     transition={{ delay: 0.5, duration: 0.6 }}
-                    className="border-t border-[rgba(180,148,72,0.06)] pt-7 flex flex-col sm:flex-row items-center justify-between gap-4"
+                    className="border-t border-[rgba(255,255,255,0.08)] pt-7 flex flex-col sm:flex-row items-center justify-between gap-4"
                 >
-                    <p className="text-[13px] text-[var(--color-text-muted)]">
+                    <p className="text-[13px] text-[rgba(255,255,255,0.4)]">
                         © 2026 LightOS. All rights reserved.
                     </p>
                     <div className="flex gap-4">
@@ -94,8 +94,8 @@ export function Footer() {
                                 key={i}
                                 href="#"
                                 aria-label={s.label}
-                                whileHover={{ y: -3, scale: 1.1, backgroundColor: "rgba(201,150,61,0.1)", borderColor: "rgba(201,150,61,0.2)", color: "#c9963d" }}
-                                className="w-9 h-9 flex items-center justify-center rounded-full bg-[rgba(201,150,61,0.05)] border border-[rgba(201,150,61,0.08)] text-[var(--color-text-muted)] transition-all duration-200"
+                                whileHover={{ y: -3, scale: 1.1, backgroundColor: "rgba(59,130,246,0.1)", borderColor: "rgba(59,130,246,0.2)", color: "#3b82f6" }}
+                                className="w-9 h-9 flex items-center justify-center rounded-full bg-[rgba(255,255,255,0.07)] border border-[rgba(255,255,255,0.12)] text-[rgba(255,255,255,0.6)] transition-all duration-200"
                             >
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">{s.svg}</svg>
                             </motion.a>

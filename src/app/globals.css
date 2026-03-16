@@ -13,17 +13,17 @@
   --color-bg-secondary: #181510;
   --color-bg-card: rgba(20, 16, 10, 0.75);
 
-  /* ── Gold Accent Scale ── */
-  --color-accent-gold: #c9963d;
-  --color-accent-warm: #e8c06a;
-  --color-accent-copper: #9a6830;
-  --color-accent-cream: #f0e8d6;
+  /* ── Blue Accent Scale ── */
+  --color-accent-gold: #3b82f6;
+  --color-accent-warm: #60a5fa;
+  --color-accent-copper: #2563eb;
+  --color-accent-cream: #dbeafe;
 
-  /* ── Legacy aliases (used throughout components) ── */
-  --color-accent-cyan: #c9963d;
-  --color-accent-purple: #9a6830;
-  --color-accent-blue: #b87840;
-  --color-accent-teal: #c9963d;
+  /* ── Legacy aliases (updated to blue) ── */
+  --color-accent-cyan: #3b82f6;
+  --color-accent-purple: #2563eb;
+  --color-accent-blue: #3b82f6;
+  --color-accent-teal: #3b82f6;
 
   /* ── Typography ── */
   --color-text-primary: #efe9df;
@@ -99,7 +99,7 @@ html.lenis body {
    ================================================ */
 
 .gradient-text {
-  background: linear-gradient(135deg, #e8c06a 0%, #c9963d 55%, #9a6830 100%);
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 55%, #2563eb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -139,7 +139,7 @@ html.lenis body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(180, 148, 72, 0.2);
+  background: rgba(59, 130, 246, 0.4);
   border-radius: 2px;
 }
 

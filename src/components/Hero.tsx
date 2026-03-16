@@ -8,16 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const LAMP_POSITIONS = [5, 20, 35, 50, 65, 80, 92];
-const LAMP_ORDER = [3, 2, 4, 1, 5, 0, 6]; // middle-out
-
-type Star = {
-    x: number;
-    y: number;
-    size: number;
-    opacity: number;
-    delay: number;
-    duration: number;
-};
+const LAMP_ORDER = [0, 1, 2, 3, 4, 5, 6]; // left-to-right
 
 export function Hero() {
     const sectionRef = useRef<HTMLElement>(null);
@@ -28,18 +19,10 @@ export function Hero() {
     const wheel1Ref = useRef<HTMLDivElement>(null);
     const wheel2Ref = useRef<HTMLDivElement>(null);
 
-    const [stars, setStars] = useState<Star[]>([]);
 
-    useEffect(() => {
-        setStars(Array.from({ length: 15 }).map(() => ({
-            x: Math.random() * 100,
-            y: Math.random() * 100,
-            size: Math.random() * 2 + 0.5,
-            opacity: Math.random() * 0.8 + 0.2, // increased base opacity slightly so they stand out when fewer
-            delay: Math.random() * 5,
-            duration: Math.random() * 1.5 + 0.5, // faster duration for a twinkling effect
-        })));
-    }, []);
+    const [scrolled, setScrolled] = useState(false);
+
+
 
     const setLampRef = useCallback(
         (el: HTMLDivElement | null, index: number) => {
@@ -111,17 +94,29 @@ export function Hero() {
             }));
         });
 
-        // Initial flicker on center lamp only (ends off, stays off until scroll)
-        const centerLamp = lampsRef.current[3];
-        if (centerLamp) {
+        // Initial flicker on third lamp only (ends off, stays off until scroll)
+        const thirdLamp = lampsRef.current[2];
+        if (thirdLamp) {
             const tl = gsap.timeline({ delay: 1.8 });
-            tl.call(() => centerLamp.classList.add("lit"))
-                .call(() => centerLamp.classList.remove("lit"), [], "+=0.2")
-                .call(() => centerLamp.classList.add("lit"), [], "+=0.2")
-                .call(() => centerLamp.classList.remove("lit"), [], "+=0.15")
-                .call(() => centerLamp.classList.add("lit"), [], "+=0.15")
-                .call(() => centerLamp.classList.remove("lit"), [], "+=0.5");
+            tl.call(() => thirdLamp.classList.add("lit"))
+                .call(() => thirdLamp.classList.remove("lit"), [], "+=0.2")
+                .call(() => thirdLamp.classList.add("lit"), [], "+=0.2")
+                .call(() => thirdLamp.classList.remove("lit"), [], "+=0.15")
+                .call(() => thirdLamp.classList.add("lit"), [], "+=0.15")
+                .call(() => thirdLamp.classList.remove("lit"), [], "+=0.5");
         }
+
+        // Background darkening overlay on scroll
+        gsap.to(".bg-darken-overlay", {
+            opacity: 1,
+            ease: "none",
+            scrollTrigger: {
+                trigger: document.body,
+                start: "5% top",
+                end: "30% top",
+                scrub: true,
+            },
+        });
 
         return () => {
             triggers.forEach((t) => t.kill());
@@ -147,55 +142,45 @@ export function Hero() {
         <section
             ref={sectionRef}
             id="hero"
-            className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden z-[1] pt-32 md:pt-24 pb-[150px] md:pb-[200px]"
-            style={{
-                background: "black",
-            }}
+            className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden z-[0] pt-32 md:pt-24 pb-[150px] md:pb-[200px] bg-transparent"
         >
-            {/* Removed ambient warm light to keep background totally black */}
+            {/* Background elements moved to fixed positions to persist behind other sections */}
 
-            {/* Starry Sky Foreground */}
-            <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden h-[80%]">
-                {stars.map((star, i) => (
-                    <div
-                        key={i}
-                        className="absolute rounded-full bg-white transition-opacity"
-                        style={{
-                            left: `${star.x}%`,
-                            top: `${star.y}%`,
-                            width: `${star.size}px`,
-                            height: `${star.size}px`,
-                            opacity: star.opacity,
-                            animation: `pulse ${star.duration}s infinite alternate cubic-bezier(0.4, 0, 0.6, 1)`,
-                            animationDelay: `${star.delay}s`,
-                        }}
-                    />
-                ))}
-            </div>
+            {/* Fixed Blur Overlay - blurs as we scroll down without darkening */}
+            <div className="bg-darken-overlay fixed inset-0 z-[3] backdrop-blur-md opacity-0 pointer-events-none" />
 
-            {/* Glowing Moon */}
+
+
+            {/* Ultra-Realistic Moon - Fixed Background */}
             <div
-                className="absolute top-[8%] md:top-[12%] right-[5%] md:right-[10%] w-[70px] h-[70px] md:w-[120px] md:h-[120px] rounded-full z-[2] pointer-events-none animate-pulse-slow"
+                className="fixed top-[8%] md:top-[12%] right-[5%] md:right-[10%] w-[70px] h-[70px] md:w-[130px] md:h-[130px] rounded-full z-[1] pointer-events-none overflow-hidden"
                 style={{
-                    background: "radial-gradient(circle at 30% 30%, #fffdee 0%, #f5ebd8 60%, #e0d0b0 100%)",
-                    boxShadow: "0 0 60px rgba(245, 235, 216, 0.5), 0 0 140px rgba(245, 235, 216, 0.3), inset -10px -10px 20px rgba(0, 0, 0, 0.15)"
+                    boxShadow: "0 0 20px rgba(255, 255, 255, 0.05), 0 0 40px rgba(255, 255, 255, 0.02)",
+                    background: "#000"
                 }}
             >
-                {/* Minimal Crater details */}
-                <div className="absolute top-[25%] left-[30%] w-[18%] h-[18%] rounded-full bg-[#b8a782] opacity-20 filter blur-[1px]" />
-                <div className="absolute top-[55%] right-[25%] w-[25%] h-[20%] rounded-full bg-[#b8a782] opacity-20 filter blur-[2px]" />
-                <div className="absolute bottom-[25%] left-[35%] w-[15%] h-[15%] rounded-full bg-[#b8a782] opacity-20 filter blur-[1px]" />
+                {/* The Moon Image */}
+                <div 
+                    className="absolute inset-0 bg-cover bg-center brightness-[0.7] contrast-[1.0]"
+                    style={{ backgroundImage: "url('/moon.png')" }}
+                />
+                
+                {/* Shading for 3D Sphere Effect */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(0,0,0,0.2)_0%,rgba(0,0,0,0.6)_70%,rgba(0,0,0,0.95)_100%)]" />
+                
+                {/* Subtle Inner Glow */}
+                <div className="absolute inset-0 rounded-full border border-white/5 shadow-[inset_0_0_10px_rgba(255,255,255,0.02)]" />
             </div>
 
-            {/* Hero Content */}
-            <div className="relative z-[5] w-[95%] md:w-[90%] max-w-6xl mx-auto px-4 md:px-6 text-center mt-0">
+            {/* Hero Content Layer */}
+            <div className="relative z-[10] w-[95%] md:w-[90%] max-w-6xl mx-auto px-4 md:px-6 text-center mt-0">
                 <motion.h1
                     variants={titleVariants}
                     initial="hidden"
                     animate="visible"
                     className="font-[var(--font-heading)] text-[clamp(40px,7vw,90px)] font-extrabold leading-[1.02] mb-7 tracking-[-2px]"
                 >
-                    <motion.span variants={lineVariants} className="block">
+                    <motion.span variants={lineVariants} className="block text-white">
                         Light<span className="gradient-text">OS</span>
                     </motion.span>
                 </motion.h1>
@@ -211,8 +196,8 @@ export function Hero() {
 
             </div>
 
-            {/* Street Scene */}
-            <div className="absolute bottom-0 left-0 right-0 h-[340px] z-[3]">
+            {/* Street Scene - Fixed Background */}
+            <div className="fixed bottom-0 left-0 right-0 h-[340px] z-[2] pointer-events-none">
                 {/* Road */}
                 <div className="absolute bottom-0 left-0 right-0 h-[180px] flex items-center justify-around px-10" style={{ background: "linear-gradient(180deg, #1e1c18, #161410)" }}>
                     <div className="absolute top-0 left-0 right-0 h-[2px] bg-[rgba(255,255,255,0.04)]" />
@@ -320,19 +305,17 @@ export function Hero() {
                                 zIndex: 5,
                             }}
                         />
-                        {/* === REALISTIC LIGHT — no clipPath, pure radial falloff === */}
-                        {/* Layer 1: wide outer ambient spread */}
+                        {/* Layer 1: very wide outer ambient — fills gap between lamps */}
                         <div
                             className="light-cone absolute pointer-events-none opacity-0"
                             style={{
-                                width: "380px",
-                                height: "300px",
+                                width: "700px",
+                                height: "380px",
                                 top: "-2px",
                                 left: i % 2 === 0 ? "calc(50% + 31px)" : "calc(50% - 31px)",
                                 transform: "translateX(-50%)",
-                                /* Ellipse: narrow horiz (30%), tall vert (110%) from top-center — natural downward cone, fades to 0 before element edge */
-                                background: "radial-gradient(ellipse 30% 110% at 50% 0%, rgba(210,230,255,0.22) 0%, rgba(195,220,255,0.10) 45%, transparent 72%)",
-                                filter: "blur(50px)",
+                                background: "radial-gradient(ellipse 40% 100% at 50% 0%, rgba(200,225,255,0.18) 0%, rgba(185,215,255,0.08) 50%, transparent 75%)",
+                                filter: "blur(70px)",
                                 mixBlendMode: "screen",
                             }}
                         />
@@ -340,38 +323,38 @@ export function Hero() {
                         <div
                             className="light-cone absolute pointer-events-none opacity-0"
                             style={{
-                                width: "220px",
-                                height: "260px",
+                                width: "320px",
+                                height: "300px",
                                 top: "-2px",
                                 left: i % 2 === 0 ? "calc(50% + 31px)" : "calc(50% - 31px)",
                                 transform: "translateX(-50%)",
-                                background: "radial-gradient(ellipse 28% 100% at 50% 0%, rgba(230,242,255,0.38) 0%, rgba(210,232,255,0.16) 40%, transparent 68%)",
-                                filter: "blur(35px)",
+                                background: "radial-gradient(ellipse 35% 100% at 50% 0%, rgba(225,240,255,0.42) 0%, rgba(210,232,255,0.18) 42%, transparent 70%)",
+                                filter: "blur(40px)",
                                 mixBlendMode: "screen",
                             }}
                         />
-                        {/* Layer 3: tight bright core axis — brightest near lamp */}
+                        {/* Layer 3: tight bright core */}
                         <div
                             className="light-cone absolute pointer-events-none opacity-0"
                             style={{
-                                width: "110px",
-                                height: "210px",
+                                width: "130px",
+                                height: "240px",
                                 top: "-2px",
                                 left: i % 2 === 0 ? "calc(50% + 31px)" : "calc(50% - 31px)",
                                 transform: "translateX(-50%)",
-                                background: "radial-gradient(ellipse 38% 90% at 50% 0%, rgba(255,255,255,0.52) 0%, rgba(230,242,255,0.20) 35%, transparent 65%)",
-                                filter: "blur(22px)",
+                                background: "radial-gradient(ellipse 42% 90% at 50% 0%, rgba(255,255,255,0.60) 0%, rgba(230,242,255,0.22) 35%, transparent 65%)",
+                                filter: "blur(18px)",
                                 mixBlendMode: "screen",
                             }}
                         />
-                        {/* Ground pool */}
+                        {/* Ground pool — wider to merge with neighbors */}
                         <div
                             className="light-ground absolute pointer-events-none opacity-0"
                             style={{
-                                width: "260px",
-                                height: "60px",
-                                background: "radial-gradient(ellipse 45% 100% at 50% 40%, rgba(225,240,255,0.50) 0%, rgba(205,228,255,0.20) 40%, transparent 72%)",
-                                filter: "blur(16px)",
+                                width: "500px",
+                                height: "80px",
+                                background: "radial-gradient(ellipse 50% 100% at 50% 40%, rgba(220,238,255,0.55) 0%, rgba(200,228,255,0.20) 45%, transparent 75%)",
+                                filter: "blur(22px)",
                                 bottom: "-20px",
                                 left: i % 2 === 0 ? "calc(50% + 31px)" : "calc(50% - 31px)",
                                 transform: "translateX(-50%)",
@@ -396,7 +379,7 @@ export function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 3.3, duration: 1.2 }}
-                className="absolute bottom-[260px] left-1/2 -translate-x-1/2 z-10 text-center flex flex-col items-center gap-2"
+                className="absolute bottom-[260px] left-1/2 -translate-x-1/2 z-[15] text-center flex flex-col items-center gap-2"
             >
                 {/* Pulsing dot */}
                 <motion.div

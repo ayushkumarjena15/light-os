@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 
 import { LimelightNav } from "@/components/ui/limelight-nav";
-import { Home, Sparkles, Info, MonitorPlay, Mail } from "lucide-react";
+import { Home, Zap, Info, MonitorPlay, Mail } from "lucide-react";
 
 const links = [
     { href: "#hero", label: "Home" },
@@ -55,7 +55,7 @@ export function Navbar() {
                 className="fixed top-0 left-0 right-0 h-[2px] z-[1001] origin-left"
                 style={{
                     scaleX,
-                    background: "linear-gradient(90deg, #c9963d, #e8c06a, #c9963d)",
+                    background: "linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa)",
                 }}
             />
 
@@ -74,7 +74,7 @@ export function Navbar() {
                         <LimelightNav
                             items={[
                                 { id: "home", icon: <Home />, label: "Home", onClick: () => scrollTo("#hero") },
-                                { id: "features", icon: <Sparkles />, label: "Features", onClick: () => scrollTo("#features") },
+                                { id: "features", icon: <Zap />, label: "Features", onClick: () => scrollTo("#features") },
                                 { id: "about", icon: <Info />, label: "About", onClick: () => scrollTo("#about") },
                                 { id: "showcase", icon: <MonitorPlay />, label: "Showcase", onClick: () => scrollTo("#showcase") },
                                 { id: "contact", icon: <Mail />, label: "Contact", onClick: () => scrollTo("#contact") }

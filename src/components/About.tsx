@@ -44,11 +44,11 @@ export function About() {
     const isInView = useInView(ref, { once: true, amount: 0.2 });
 
     return (
-        <section id="about" className="relative z-[2] py-[120px] overflow-hidden" style={{ background: "black" }}>
+        <section id="about" className="relative z-[20] py-[120px] overflow-hidden">
             {/* Section separator */}
-            <div className="absolute top-0 left-0 right-0 h-px pointer-events-none" style={{ background: "linear-gradient(90deg, transparent, rgba(201,150,61,0.18), rgba(154,104,48,0.1), transparent)" }} />
+            <div className="absolute top-0 left-0 right-0 h-px pointer-events-none" style={{ background: "linear-gradient(90deg, transparent, rgba(59,130,246,0.18), rgba(37,99,235,0.1), transparent)" }} />
             {/* Ambient glow */}
-            <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 65% 50% at 20% 50%, rgba(154,104,48,0.05) 0%, transparent 60%)" }} />
+            <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 65% 50% at 20% 50%, rgba(37,99,235,0.05) 0%, transparent 60%)" }} />
             <div ref={ref} className="max-w-[1200px] mx-auto px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-[72px] items-center">
                     {/* Orb Visual */}
@@ -61,35 +61,35 @@ export function About() {
                         <div className="relative w-[320px] h-[320px] flex items-center justify-center">
                             {/* Ring 1 — dashed */}
                             <div
-                                className="absolute w-full h-full rounded-full border border-dashed border-[rgba(201,150,61,0.12)] animate-[orbSpin_22s_linear_infinite]"
+                                className="absolute w-full h-full rounded-full border border-dashed border-[rgba(59,130,246,0.12)] animate-[orbSpin_22s_linear_infinite]"
                             />
                             {/* Ring 2 */}
                             <div
-                                className="absolute w-[72%] h-[72%] rounded-full border border-[rgba(154,104,48,0.15)]"
+                                className="absolute w-[72%] h-[72%] rounded-full border border-[rgba(37,99,235,0.15)]"
                                 style={{ animation: "orbSpin 16s linear infinite reverse" }}
                             />
                             {/* Ring 3 — dashed */}
                             <div
-                                className="absolute w-[48%] h-[48%] rounded-full border border-dashed border-[rgba(201,150,61,0.2)] animate-[orbSpin_11s_linear_infinite]"
+                                className="absolute w-[48%] h-[48%] rounded-full border border-dashed border-[rgba(59,130,246,0.2)] animate-[orbSpin_11s_linear_infinite]"
                             />
                             {/* Core */}
                             <motion.div
                                 animate={{
                                     boxShadow: [
-                                        "0 0 50px rgba(201,150,61,0.2), 0 0 100px rgba(201,150,61,0.08)",
-                                        "0 0 70px rgba(232,192,106,0.35), 0 0 120px rgba(201,150,61,0.12)",
-                                        "0 0 50px rgba(201,150,61,0.2), 0 0 100px rgba(201,150,61,0.08)",
+                                        "0 0 50px rgba(59,130,246,0.2), 0 0 100px rgba(59,130,246,0.08)",
+                                        "0 0 70px rgba(96,165,250,0.35), 0 0 120px rgba(59,130,246,0.12)",
+                                        "0 0 50px rgba(59,130,246,0.2), 0 0 100px rgba(59,130,246,0.08)",
                                     ],
                                 }}
                                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
                                 className="w-[85px] h-[85px] rounded-full flex items-center justify-center text-[38px] relative"
-                                style={{ background: "linear-gradient(135deg, rgba(201,150,61,0.3), rgba(154,104,48,0.3))" }}
+                                style={{ background: "linear-gradient(135deg, rgba(59,130,246,0.3), rgba(37,99,235,0.3))" }}
                             >
                                 💡
                                 <div
                                     className="absolute w-[140%] h-[140%] rounded-full"
                                     style={{
-                                        background: "radial-gradient(circle, rgba(201,150,61,0.08) 0%, transparent 70%)",
+                                        background: "radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%)",
                                         animation: "corePulse 3.5s ease-in-out infinite reverse",
                                     }}
                                 />
@@ -119,9 +119,9 @@ export function About() {
                         {/* Stats */}
                         <div className="flex gap-10 mt-9 flex-wrap">
                             <AnimatedCounter target={99.9} suffix="%" label="Uptime" />
-                            <div className="w-px h-10 self-center" style={{ background: "linear-gradient(180deg, transparent, rgba(201,150,61,0.2), transparent)" }} />
+                            <div className="w-px h-10 self-center" style={{ background: "linear-gradient(180deg, transparent, rgba(59,130,246,0.2), transparent)" }} />
                             <AnimatedCounter target={2.8} suffix="s" label="Boot Time" />
-                            <div className="w-px h-10 self-center" style={{ background: "linear-gradient(180deg, transparent, rgba(201,150,61,0.2), transparent)" }} />
+                            <div className="w-px h-10 self-center" style={{ background: "linear-gradient(180deg, transparent, rgba(59,130,246,0.2), transparent)" }} />
                             <AnimatedCounter target={50} suffix="M+" label="Users" />
                         </div>
                     </motion.div>
