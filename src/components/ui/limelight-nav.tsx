@@ -102,6 +102,7 @@ export const LimelightNav = ({
         WebkitBackdropFilter: 'blur(24px)',
         borderColor: 'rgba(180, 148, 72, 0.15)',
         color: 'var(--color-text-primary)',
+        pointerEvents: 'auto',
       }}
     >
       {items.map(({ id, icon, label, onClick }, index) => (
@@ -126,8 +127,8 @@ export const LimelightNav = ({
           } ${limelightClassName ?? ''}`}
         style={{
           left: '-999px',
-          background: 'linear-gradient(90deg, #c9963d, #e8c06a, #c9963d)',
-          boxShadow: '0 50px 15px var(--color-accent-gold)',
+          background: 'linear-gradient(90deg, #d0d0d0, #ffffff, #d0d0d0)',
+          boxShadow: '0 50px 15px rgba(255,255,255,0.6)',
         }}
       >
         {/* Cone glow beneath the bar */}
@@ -135,7 +136,7 @@ export const LimelightNav = ({
           className="absolute left-[-30%] top-[3px] w-[160%] h-14 pointer-events-none"
           style={{
             clipPath: 'polygon(5% 100%, 25% 0, 75% 0, 95% 100%)',
-            background: 'linear-gradient(to bottom, rgba(201,150,61,0.35), transparent)',
+            background: 'linear-gradient(to bottom, rgba(255,255,255,0.25), transparent)',
           }}
         />
       </div>

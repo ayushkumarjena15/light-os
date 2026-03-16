@@ -173,27 +173,62 @@ export function Hero() {
             </div>
 
             {/* Hero Content Layer */}
-            <div className="relative z-[10] w-[95%] md:w-[90%] max-w-6xl mx-auto px-4 md:px-6 text-center mt-0">
-                <motion.h1
+            <div className="relative z-[10] w-[95%] md:w-[90%] max-w-6xl mx-auto px-4 md:px-6 mt-0">
+                <motion.div
                     variants={titleVariants}
                     initial="hidden"
                     animate="visible"
-                    className="font-[var(--font-heading)] text-[clamp(40px,7vw,90px)] font-extrabold leading-[1.02] mb-7 tracking-[-2px]"
+                    className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 mb-10"
                 >
-                    <motion.span variants={lineVariants} className="block text-white">
-                        Light<span className="gradient-text">OS</span>
-                    </motion.span>
-                </motion.h1>
 
-                <motion.p
-                    initial={{ opacity: 0, y: 24 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-[clamp(16px,2vw,20px)] text-[var(--color-text-secondary)] max-w-[580px] mx-auto mb-10 leading-relaxed"
-                >
-                    Building smart public lighting system
-                </motion.p>
+                    {/* Centered LightOS Logo Lockup */}
+                    <motion.div variants={lineVariants} className="flex flex-col items-center justify-center mt-[-40px]">
+                        <h1 className="flex items-center justify-center font-[var(--font-heading)] text-[50px] md:text-[80px] font-extrabold leading-[1.02] tracking-[-2px]">
+                            <span className="text-white relative z-0">Ligh</span>
+                            {/* The Lamp "T" */}
+                            <div className="relative z-10 inline-flex items-end justify-center w-[1.45em] h-[1.10em] -mx-[0.17em] align-baseline -translate-y-[0.15em]">
+                                <svg viewBox="-5 0 150 120" className="w-full h-full overflow-visible" preserveAspectRatio="xMidYMax meet">
+                                    {/* Left Lamp Head */}
+                                    <path d="M 0 18 C 2 13, 34 13, 36 18 Z" fill="white"/>
+                                    <path d="M 6 18 C 9 23, 27 23, 30 18 Z" fill="#fef08a"/>
+                                    <path d="M 8 18 C 8 26, 28 26, 28 18" fill="none" stroke="#fef08a" strokeWidth="1.5" strokeLinecap="round"/>
+                                    
+                                    {/* Right Lamp Head */}
+                                    <path d="M 104 18 C 106 13, 138 13, 140 18 Z" fill="white"/>
+                                    <path d="M 110 18 C 113 23, 131 23, 134 18 Z" fill="#fef08a"/>
+                                    <path d="M 112 18 C 112 26, 132 26, 132 18" fill="none" stroke="#fef08a" strokeWidth="1.5" strokeLinecap="round"/>
 
+                                    {/* Arms */}
+                                    <path d="M 64 33 L 38 18 L 0 18" fill="none" stroke="white" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                    <path d="M 76 33 L 102 18 L 140 18" fill="none" stroke="white" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                    
+                                    {/* Main pole */}
+                                    <rect x="66" y="32" width="8" height="68" fill="white" />
+                                    
+                                    {/* Pole Bands */}
+                                    <rect x="65" y="50" width="10" height="2" rx="1" fill="white" />
+                                    <rect x="65" y="65" width="10" height="2" rx="1" fill="white" />
+                                    <rect x="65" y="80" width="10" height="2" rx="1" fill="white" />
+
+                                    {/* Base styling */}
+                                    <path d="M 66 100 L 62 110 L 62 120 L 78 120 L 78 110 L 74 100 Z" fill="white"/>
+                                    
+                                    {/* Top Joint */}
+                                    <rect x="64" y="30" width="12" height="6" rx="1.5" fill="white" />
+                                    <rect x="66" y="26" width="3" height="5" fill="white" rx="1" />
+                                    <rect x="71" y="26" width="3" height="5" fill="white" rx="1" />
+                                </svg>
+                                {/* Glows */}
+                                <div className="absolute left-[0%] top-[3%] w-[33%] h-[35%] rounded-full bg-yellow-400 blur-[13px] opacity-75" style={{ boxShadow: '0 0 50px 20px rgba(253,224,71,0.6)' }} />
+                                <div className="absolute right-[0%] top-[3%] w-[33%] h-[35%] rounded-full bg-yellow-400 blur-[13px] opacity-75" style={{ boxShadow: '0 0 50px 20px rgba(253,224,71,0.6)' }} />
+                            </div>
+                            <span className="text-[#2ea2f8] relative z-0">OS</span>
+                        </h1>
+                        <p className="text-[#a3a3a3] font-semibold text-[16px] md:text-[22px] tracking-wide mt-1 drop-shadow-sm font-[var(--font-body)] text-center">
+                            Powered By Autometra Technologies
+                        </p>
+                    </motion.div>
+                </motion.div>
             </div>
 
             {/* Street Scene - Fixed Background */}

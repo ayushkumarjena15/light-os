@@ -65,7 +65,7 @@ export function Latest() {
     };
 
     return (
-        <section ref={ref} className="relative z-[20] py-[80px] overflow-hidden">
+        <section ref={ref} id="features" className="relative z-[20] py-[80px] overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-px pointer-events-none" style={{ background: "linear-gradient(90deg, transparent, rgba(59,130,246,0.15), transparent)" }} />
 
             <div className="max-w-[1200px] mx-auto px-6">
