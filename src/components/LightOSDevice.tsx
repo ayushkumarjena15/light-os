@@ -2,13 +2,14 @@
 
 import React, { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { RoundedBox, Text } from "@react-three/drei";
+import { RoundedBox, useTexture } from "@react-three/drei";
 import * as THREE from "three";
 
 export default function LightOSDevice(props: any) {
   const outerRef = useRef<THREE.Group>(null);
   const ringRef = useRef<THREE.Mesh>(null);
   const coreRef = useRef<THREE.Mesh>(null);
+  const logoTexture = useTexture("/autometra_logo_transparent.png");
 
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
@@ -63,18 +64,11 @@ export default function LightOSDevice(props: any) {
         <meshStandardMaterial color="#ffffff" metalness={0.8} roughness={0.2} />
       </mesh>
 
-      {/* Brand Text */}
-      <Text
-        position={[0, -0.6, 0.49]}
-        fontSize={0.1}
-        anchorX="center"
-        anchorY="middle"
-        letterSpacing={0.15}
-        font="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff"
-      >
-        <meshBasicMaterial color="#ffffff" toneMapped={false} />
-        Autometra Technologies
-      </Text>
+      {/* Brand Logo */}
+      <mesh position={[0, -0.65, 0.49]}>
+        <planeGeometry args={[1.0, 1.0]} />
+        <meshBasicMaterial map={logoTexture} toneMapped={false} transparent={true} />
+      </mesh>
 
       {/* Heat Sinks / Side Panels */}
       <mesh position={[-0.82, 0, 0]}>
