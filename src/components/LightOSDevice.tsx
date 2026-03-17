@@ -66,11 +66,14 @@ export default function LightOSDevice(props: any) {
       {/* Brand Text */}
       <Text
         position={[0, -0.6, 0.45]}
-        fontSize={0.08}
+        fontSize={0.1}
         color="#ffffff"
         anchorX="center"
         anchorY="middle"
         letterSpacing={0.15}
+        fillOpacity={1}
+        outlineWidth={0.01}
+        outlineColor="#000000"
         font="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff"
       >
         Autometra Technologies
