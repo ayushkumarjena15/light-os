@@ -282,92 +282,100 @@ export function Hero() {
                     >
                         {/* Post */}
                         <div className="w-1 h-[115px] mx-auto rounded-sm" style={{ background: "linear-gradient(180deg, #2a2620, #1a1810)", boxShadow: "1px 0 0 rgba(255,255,255,0.02)" }} />
-                        {/* Arm */}
-                        <div
-                            className="absolute top-0 left-1/2 w-8 h-1 bg-[#242018] rounded-sm origin-left"
-                            style={{ transform: i % 2 === 0 ? "translateX(-2px)" : "translateX(-30px)" }}
-                        />
-                        {/* Head */}
-                        <div
-                            className="absolute -top-[7px] w-[18px] h-[9px] rounded-t"
-                            style={{
-                                background: "linear-gradient(180deg, #302c24, #222018)",
-                                left: i % 2 === 0 ? "calc(50% + 22px)" : "calc(50% - 40px)",
-                            }}
-                        >
-                            <div className="lamp-bulb w-[10px] h-[6px] bg-[#ffffff] rounded-b-[5px] mx-auto opacity-0" />
-                        </div>
-                        {/* Lamp Halo — hot white core → cool white diffusion */}
-                        <div
-                            className="lamp-halo absolute pointer-events-none opacity-0"
-                            style={{
-                                width: "130px",
-                                height: "130px",
-                                background: "radial-gradient(circle at 50% 50%, rgba(255,255,255,1) 0%, rgba(230,240,255,0.75) 18%, rgba(200,220,255,0.35) 38%, rgba(180,210,255,0.08) 60%, transparent 75%)",
-                                filter: "blur(7px)",
-                                left: i % 2 === 0 ? "calc(50% + 31px)" : "calc(50% - 31px)",
-                                top: "-58px",
-                                transform: "translateX(-50%)",
-                                mixBlendMode: "screen",
-                                zIndex: 5,
-                            }}
-                        />
-                        {/* Layer 1: very wide outer ambient — fills gap between lamps */}
-                        <div
-                            className="light-cone absolute pointer-events-none opacity-0"
-                            style={{
-                                width: "700px",
-                                height: "380px",
-                                top: "-2px",
-                                left: i % 2 === 0 ? "calc(50% + 31px)" : "calc(50% - 31px)",
-                                transform: "translateX(-50%)",
-                                background: "radial-gradient(ellipse 40% 100% at 50% 0%, rgba(200,225,255,0.18) 0%, rgba(185,215,255,0.08) 50%, transparent 75%)",
-                                filter: "blur(70px)",
-                                mixBlendMode: "screen",
-                            }}
-                        />
-                        {/* Layer 2: medium cone body */}
-                        <div
-                            className="light-cone absolute pointer-events-none opacity-0"
-                            style={{
-                                width: "320px",
-                                height: "300px",
-                                top: "-2px",
-                                left: i % 2 === 0 ? "calc(50% + 31px)" : "calc(50% - 31px)",
-                                transform: "translateX(-50%)",
-                                background: "radial-gradient(ellipse 35% 100% at 50% 0%, rgba(225,240,255,0.42) 0%, rgba(210,232,255,0.18) 42%, transparent 70%)",
-                                filter: "blur(40px)",
-                                mixBlendMode: "screen",
-                            }}
-                        />
-                        {/* Layer 3: tight bright core */}
-                        <div
-                            className="light-cone absolute pointer-events-none opacity-0"
-                            style={{
-                                width: "130px",
-                                height: "240px",
-                                top: "-2px",
-                                left: i % 2 === 0 ? "calc(50% + 31px)" : "calc(50% - 31px)",
-                                transform: "translateX(-50%)",
-                                background: "radial-gradient(ellipse 42% 90% at 50% 0%, rgba(255,255,255,0.60) 0%, rgba(230,242,255,0.22) 35%, transparent 65%)",
-                                filter: "blur(18px)",
-                                mixBlendMode: "screen",
-                            }}
-                        />
-                        {/* Ground pool — wider to merge with neighbors */}
-                        <div
-                            className="light-ground absolute pointer-events-none opacity-0"
-                            style={{
-                                width: "500px",
-                                height: "80px",
-                                background: "radial-gradient(ellipse 50% 100% at 50% 40%, rgba(220,238,255,0.55) 0%, rgba(200,228,255,0.20) 45%, transparent 75%)",
-                                filter: "blur(22px)",
-                                bottom: "-20px",
-                                left: i % 2 === 0 ? "calc(50% + 31px)" : "calc(50% - 31px)",
-                                transform: "translateX(-50%)",
-                                mixBlendMode: "screen",
-                            }}
-                        />
+                        
+                        {[
+                            { armTranslate: "-30px", headLeft: "calc(50% - 40px)", lightLeft: "calc(50% - 31px)" },
+                            { armTranslate: "-2px", headLeft: "calc(50% + 22px)", lightLeft: "calc(50% + 31px)" },
+                        ].map((side, sideIdx) => (
+                            <div key={sideIdx}>
+                                {/* Arm */}
+                                <div
+                                    className="absolute top-0 left-1/2 w-8 h-1 bg-[#242018] rounded-sm origin-left"
+                                    style={{ transform: `translateX(${side.armTranslate})` }}
+                                />
+                                {/* Head */}
+                                <div
+                                    className="absolute -top-[7px] w-[18px] h-[9px] rounded-t"
+                                    style={{
+                                        background: "linear-gradient(180deg, #302c24, #222018)",
+                                        left: side.headLeft,
+                                    }}
+                                >
+                                    <div className="lamp-bulb w-[10px] h-[6px] bg-[#fff5cc] rounded-b-[5px] mx-auto opacity-0" />
+                                </div>
+                                {/* Lamp Halo — hot yellow core → warm diffusion */}
+                                <div
+                                    className="lamp-halo absolute pointer-events-none opacity-0"
+                                    style={{
+                                        width: "130px",
+                                        height: "130px",
+                                        background: "radial-gradient(circle at 50% 50%, rgba(255,235,150,1) 0%, rgba(255,215,0,0.7) 18%, rgba(255,180,0,0.3) 38%, rgba(255,150,0,0.05) 60%, transparent 75%)",
+                                        filter: "blur(7px)",
+                                        left: side.lightLeft,
+                                        top: "-58px",
+                                        transform: "translateX(-50%)",
+                                        mixBlendMode: "screen",
+                                        zIndex: 5,
+                                    }}
+                                />
+                                {/* Layer 1: very wide outer ambient — fills gap between lamps */}
+                                <div
+                                    className="light-cone absolute pointer-events-none opacity-0"
+                                    style={{
+                                        width: "700px",
+                                        height: "380px",
+                                        top: "-2px",
+                                        left: side.lightLeft,
+                                        transform: "translateX(-50%)",
+                                        background: "radial-gradient(ellipse 40% 100% at 50% 0%, rgba(255,220,100,0.15) 0%, rgba(255,200,50,0.06) 50%, transparent 75%)",
+                                        filter: "blur(70px)",
+                                        mixBlendMode: "screen",
+                                    }}
+                                />
+                                {/* Layer 2: medium cone body */}
+                                <div
+                                    className="light-cone absolute pointer-events-none opacity-0"
+                                    style={{
+                                        width: "320px",
+                                        height: "300px",
+                                        top: "-2px",
+                                        left: side.lightLeft,
+                                        transform: "translateX(-50%)",
+                                        background: "radial-gradient(ellipse 35% 100% at 50% 0%, rgba(255,230,120,0.3) 0%, rgba(255,210,80,0.12) 42%, transparent 70%)",
+                                        filter: "blur(40px)",
+                                        mixBlendMode: "screen",
+                                    }}
+                                />
+                                {/* Layer 3: tight bright core */}
+                                <div
+                                    className="light-cone absolute pointer-events-none opacity-0"
+                                    style={{
+                                        width: "130px",
+                                        height: "240px",
+                                        top: "-2px",
+                                        left: side.lightLeft,
+                                        transform: "translateX(-50%)",
+                                        background: "radial-gradient(ellipse 42% 90% at 50% 0%, rgba(255,245,180,0.5) 0%, rgba(255,225,120,0.18) 35%, transparent 65%)",
+                                        filter: "blur(18px)",
+                                        mixBlendMode: "screen",
+                                    }}
+                                />
+                                {/* Ground pool — wider to merge with neighbors */}
+                                <div
+                                    className="light-ground absolute pointer-events-none opacity-0"
+                                    style={{
+                                        width: "500px",
+                                        height: "80px",
+                                        background: "radial-gradient(ellipse 50% 100% at 50% 40%, rgba(255,220,100,0.4) 0%, rgba(255,190,50,0.15) 45%, transparent 75%)",
+                                        filter: "blur(22px)",
+                                        bottom: "-20px",
+                                        left: side.lightLeft,
+                                        transform: "translateX(-50%)",
+                                        mixBlendMode: "screen",
+                                    }}
+                                />
+                            </div>
+                        ))}
                     </div>
                 ))}
 
