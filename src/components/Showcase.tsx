@@ -93,81 +93,129 @@ export function Showcase() {
                         </div>
                     </div>
 
-                    {/* Desktop Content */}
-                    <div className="relative h-[300px] sm:h-[400px] md:h-[450px] overflow-hidden"
-                        style={{
-                            background: "linear-gradient(135deg, #0e0c09 0%, #1a1510 35%, #0c0a07 70%, #090805 100%)",
-                        }}
-                    >
-                        {/* Ambient gradients */}
-                        <div className="absolute inset-0 overflow-hidden">
-                            <motion.div
-                                animate={{ x: ["0%", "1%", "-1%", "0%"], y: ["0%", "-1%", "1%", "0%"] }}
-                                transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-                                className="absolute -top-1/2 -left-1/2 w-[200%] h-[200%]"
-                                style={{
-                                    background: "radial-gradient(circle at 25% 35%, rgba(59,130,246,0.05) 0%, transparent 40%), radial-gradient(circle at 75% 65%, rgba(37,99,235,0.03) 0%, transparent 40%)",
-                                }}
-                            />
+                    {/* Dashboard Content */}
+                    <div className="relative h-[380px] sm:h-[450px] md:h-[550px] flex overflow-hidden bg-[#09090b]">
+                        
+                        {/* 1. Left Sidebar (Navigation & Quick Stats) */}
+                        <div className="w-[200px] sm:w-[240px] border-r border-[#1a1a24] bg-[#0c0c10] flex flex-col pt-6 pb-4 z-[10] hidden sm:flex">
+                            <div className="px-5 mb-8">
+                                <h3 className="text-[#e2e2e8] font-bold tracking-wide text-sm flex items-center gap-2">
+                                    <span className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
+                                    LightOS Control
+                                </h3>
+                            </div>
+
+                            <nav className="flex-1 px-3">
+                                {["Overview", "Network Map", "Energy Analytics", "Maintenance", "Settings"].map((item, i) => (
+                                    <div key={i} className={`px-3 py-2.5 rounded-lg mb-1 flex items-center gap-3 text-[13px] font-medium transition-colors cursor-pointer ${i === 0 ? "bg-[#1c2033] text-blue-400 border border-blue-500/20" : "text-[#8e8e99] hover:bg-[#15151e] hover:text-[#c4c4cc]"}`}>
+                                        <div className={`w-4 h-4 rounded-[4px] ${i === 0 ? "bg-blue-500/20" : "bg-[#2a2a35]"}`} />
+                                        {item}
+                                    </div>
+                                ))}
+                            </nav>
+
+                            <div className="px-5">
+                                <div className="p-4 rounded-xl bg-[#121218] border border-[#1a1a24]">
+                                    <div className="text-[11px] text-[#8e8e99] font-semibold uppercase tracking-wider mb-1">System Health</div>
+                                    <div className="text-xl font-bold text-[#e2e2e8] mb-1">99.8%</div>
+                                    <div className="w-full bg-[#2a2a35] h-1.5 rounded-full overflow-hidden">
+                                        <div className="bg-green-500 h-full w-[99.8%]" />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div
-                            className="absolute bottom-[30%] left-0 right-0 h-px blur-[1px]"
-                            style={{ background: "linear-gradient(90deg, transparent, rgba(59,130,246,0.18), rgba(37,99,235,0.1), transparent)" }}
-                        />
-
-                        {/* Clock */}
-                        <div className="flex flex-col items-center justify-center h-full relative z-[1]">
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                                transition={{ delay: 0.8, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                            >
-                                <div suppressHydrationWarning className="font-[var(--font-heading)] text-[48px] md:text-[76px] font-extralight text-[var(--color-text-primary)] tracking-[-3px]"
-                                    style={{ textShadow: "0 0 40px rgba(245,234,208,0.25)" }}>
-                                    {time}
+                        {/* 2. Main Area */}
+                        <div className="flex-1 flex flex-col relative overflow-hidden">
+                            {/* Top Bar inside Dashboard */}
+                            <div className="h-14 border-b border-[#1a1a24] bg-[#09090b]/80 backdrop-blur flex items-center justify-between px-6 z-[10]">
+                                <div className="text-[14px] font-semibold text-[#e2e2e8]">City Grid Beta — District 4</div>
+                                <div className="flex gap-4 items-center">
+                                    <div className="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[11px] font-medium flex items-center gap-1.5">
+                                        <span className="relative flex h-2 w-2">
+                                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                                          <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                                        </span>
+                                        Live
+                                    </div>
+                                    <div className="w-7 h-7 rounded-full bg-[#1c2033] border border-blue-500/30 font-bold text-[10px] text-blue-400 flex items-center justify-center">
+                                        JD
+                                    </div>
                                 </div>
-                                <div suppressHydrationWarning className="text-[15px] text-[var(--color-text-secondary)] mt-1 font-light tracking-wide text-center">
-                                    {date}
-                                </div>
-                            </motion.div>
-                        </div>
+                            </div>
 
-                        {/* Dock */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ delay: 1.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                            className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-1.5 px-[18px] py-2.5 rounded-3xl border border-[rgba(59,130,246,0.1)] backdrop-blur-xl"
-                            style={{ background: "rgba(20,16,10,0.5)" }}
-                        >
-                            {dockApps.map((app, i) => {
-                                const distance = hoveredDock !== null ? Math.abs(i - hoveredDock) : 999;
-                                const scale = distance === 0 ? 1.35 : distance === 1 ? 1.15 : 1;
-                                const transY = distance === 0 ? -10 : distance === 1 ? -4 : 0;
-
-                                return (
-                                    <motion.div
+                            {/* Map / Grid Background (The "Smart City") */}
+                            <div className="absolute inset-0 z-[1] overflow-hidden" style={{ background: "radial-gradient(circle at 50% 50%, #101018 0%, #060608 100%)" }}>
+                                {/* Map Grid Lines */}
+                                <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "linear-gradient(#3b82f6 1px, transparent 1px), linear-gradient(90deg, #3b82f6 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
+                                
+                                {/* Glowing Streetlight Nodes on the map */}
+                                {[
+                                    { t: "20%", l: "30%", active: true }, { t: "35%", l: "45%", active: true }, 
+                                    { t: "50%", l: "25%", active: true }, { t: "65%", l: "55%", active: true },
+                                    { t: "80%", l: "40%", active: true }, { t: "25%", l: "70%", active: false },
+                                    { t: "55%", l: "85%", active: true }, { t: "75%", l: "75%", active: true }
+                                ].map((node, i) => (
+                                    <motion.div 
                                         key={i}
-                                        animate={{ scale, y: transY }}
-                                        transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                                        onMouseEnter={() => setHoveredDock(i)}
-                                        onMouseLeave={() => setHoveredDock(null)}
-                                        className="dock-item relative w-[46px] h-[46px] flex items-center justify-center text-[22px] rounded-lg cursor-pointer hover:bg-[rgba(59,130,246,0.08)]"
+                                        className="absolute w-2 h-2 rounded-full -translate-x-1/2 -translate-y-1/2"
+                                        style={{ top: node.t, left: node.l, background: node.active ? "#3b82f6" : "#ef4444", boxShadow: node.active ? "0 0 15px #3b82f6" : "0 0 15px #ef4444" }}
+                                        animate={{ scale: [1, 1.3, 1], opacity: [0.7, 1, 0.7] }}
+                                        transition={{ duration: 2 + (i * 0.5), repeat: Infinity }}
                                     >
-                                        {app.emoji}
-                                        {/* Tooltip */}
-                                        <motion.span
-                                            initial={{ opacity: 0, scale: 0.8, y: 0 }}
-                                            animate={hoveredDock === i ? { opacity: 1, scale: 1, y: -4 } : { opacity: 0, scale: 0.8, y: 0 }}
-                                            className="absolute -top-8 left-1/2 -translate-x-1/2 text-[11px] text-[var(--color-text-primary)] bg-[rgba(20,16,10,0.9)] px-2.5 py-1 rounded-md whitespace-nowrap border border-[rgba(59,130,246,0.12)] pointer-events-none"
-                                        >
-                                            {app.label}
-                                        </motion.span>
+                                        {node.active && (
+                                            <div className="absolute inset-[-10px] rounded-full bg-blue-500/20 blur-[4px]" />
+                                        )}
+                                        {/* Connection lines to next node pseudo-randomly */}
+                                        {node.active && i < 6 && (
+                                            <div className="absolute top-1/2 left-1/2 w-32 h-[1px] origin-left bg-gradient-to-r from-blue-500/40 to-transparent pointer-events-none" style={{ transform: `rotate(${i * 45}deg)` }} />
+                                        )}
                                     </motion.div>
-                                );
-                            })}
-                        </motion.div>
+                                ))}
+                            </div>
+
+                            {/* Dashboard Widgets Floating Over Map */}
+                            <div className="relative z-[10] p-6 h-full flex flex-col justify-between">
+                                {/* Top Stats Row */}
+                                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                                    {[
+                                        { label: "Active Nodes", val: "1,248", trend: "+12", ok: true },
+                                        { label: "Energy Saved", val: "342 kWh", trend: "Today", ok: true },
+                                        { label: "Faults Detected", val: "3", trend: "Requires Action", ok: false }
+                                    ].map((stat, i) => (
+                                        <div key={i} className={`p-4 rounded-xl border backdrop-blur-md ${stat.ok ? 'bg-[#0c0c10]/80 border-[#1a1a24]' : 'bg-red-950/20 border-red-500/20'}`}>
+                                            <div className="text-[12px] text-[#8e8e99] font-medium mb-1">{stat.label}</div>
+                                            <div className="flex items-end justify-between">
+                                                <div className={`text-2xl font-bold ${stat.ok ? 'text-[#e2e2e8]' : 'text-red-400'}`}>{stat.val}</div>
+                                                <div className={`text-[11px] font-medium ${stat.ok ? 'text-green-400' : 'text-red-400'}`}>{stat.trend}</div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {/* Bottom Info Panel */}
+                                <div className="mt-auto w-full max-w-sm rounded-xl bg-[#0c0c10]/90 backdrop-blur-md border border-[#1a1a24] p-4">
+                                    <div className="text-[12px] font-semibold text-[#e2e2e8] mb-3">Live Feed</div>
+                                    <div className="space-y-3">
+                                        {[
+                                            { time: "Just now", msg: "Lamp #402 automatically dimmed (sunrise limit)", lux: "-40%" },
+                                            { time: "2m ago", msg: "Lamp #118 fault detected (voltage drop)", lux: "Err", alert: true },
+                                            { time: "15m ago", msg: "Sector A scheduled power-on complete", lux: "100%" },
+                                        ].map((feed, i) => (
+                                            <div key={i} className="flex items-start gap-3">
+                                                <div className={`w-1.5 h-1.5 rounded-full mt-1.5 ${feed.alert ? 'bg-red-500 shadow-[0_0_8px_#ef4444]' : 'bg-blue-500'}`} />
+                                                <div className="flex-1">
+                                                    <div className={`text-[12px] font-medium ${feed.alert ? 'text-red-300' : 'text-[#c4c4cc]'}`}>{feed.msg}</div>
+                                                    <div className="text-[10px] text-[#6a6a75] mt-0.5">{feed.time}</div>
+                                                </div>
+                                                <div className={`text-[11px] font-bold ${feed.alert ? 'text-red-500' : 'text-blue-400'}`}>{feed.lux}</div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </motion.div>
             </div>

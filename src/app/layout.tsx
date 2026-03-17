@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   title: "LightOS — Illuminate Your Digital World",
   description:
     "LightOS is a next-generation operating system that brings light to your digital experience. Smooth, fast, and beautifully designed.",
+  icons: {
+    icon: "/LightOS-Logo Transparent.png",
+    apple: "/LightOS-Logo Transparent.png",
+  },
 };
 
 export default function RootLayout({
