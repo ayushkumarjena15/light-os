@@ -90,13 +90,13 @@ export default function LightOSDevice(props: any) {
         <meshStandardMaterial color="#333333" metalness={0.9} roughness={0.5} />
       </mesh>
 
-      {/* Top Antenna */}
-      <mesh position={[0.6, 1.4, 0]}>
+      {/* Left Antenna */}
+      <mesh position={[-1.2, 0.6, 0]} rotation={[0, 0, Math.PI / 2]}>
         <cylinderGeometry args={[0.03, 0.05, 0.8, 16]} />
         <meshStandardMaterial color="#333333" metalness={0.9} roughness={0.5} />
       </mesh>
-      {/* Top Antenna Tip (Red light) */}
-      <mesh position={[0.6, 1.8, 0]}>
+      {/* Left Antenna Tip (Red light) */}
+      <mesh position={[-1.6, 0.6, 0]}>
         <sphereGeometry args={[0.05, 16, 16]} />
         <meshStandardMaterial color="#ef4444" emissive="#ef4444" emissiveIntensity={2} />
       </mesh>
