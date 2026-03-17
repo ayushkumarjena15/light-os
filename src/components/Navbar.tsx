@@ -70,9 +70,6 @@ export function Navbar() {
                     }`}
             >
                 <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between">
-                    {/* Left spacer to keep nav perfectly centered */}
-                    <div className="w-[160px] hidden md:block pointer-events-none" />
-
                     {/* Desktop Links (LimelightNav) */}
                     <div className={`hidden md:flex flex-1 justify-center transition-transform duration-500 pointer-events-auto ${scrolled ? 'scale-105' : 'scale-100'}`}>
                         <LimelightNav
@@ -84,19 +81,6 @@ export function Navbar() {
                                 { id: "contact", icon: <Mail />, label: "Contact", onClick: () => scrollTo("#contact") }
                             ]}
                             activeIndex={links.findIndex(l => l.href === active)}
-                        />
-                    </div>
-
-                    {/* Profile right side */}
-                    <div className={`hidden md:flex items-center gap-3 w-[160px] justify-end pointer-events-auto transition-all duration-500 ${scrolled ? 'opacity-0 translate-x-4 pointer-events-none' : 'opacity-100'}`}>
-                        <div className="flex flex-col items-end justify-center">
-                            <span className="text-[13px] font-bold text-white leading-tight">Ayush</span>
-                            <span className="text-[10px] font-medium text-blue-400 tracking-wider">ADMIN</span>
-                        </div>
-                        <img 
-                            src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" 
-                            alt="Ayush" 
-                            className="w-9 h-9 rounded-full object-cover border-2 border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.3)]" 
                         />
                     </div>
 
