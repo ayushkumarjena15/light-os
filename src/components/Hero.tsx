@@ -214,7 +214,7 @@ export function Hero() {
                     {/* Car */}
                     <div
                         ref={carRef}
-                        className="absolute bottom-[40px] -left-[10%] w-[80px] h-[24px] z-[5] flex items-end drop-shadow-2xl scale-125 md:scale-150 origin-bottom"
+                        className="absolute bottom-[110px] -left-[10%] w-[80px] h-[24px] z-[3] flex items-end drop-shadow-xl scale-95 md:scale-105 origin-bottom"
                         style={{ perspective: "100px" }}
                     >
                         {/* Car Body */}
