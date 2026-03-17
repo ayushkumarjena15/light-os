@@ -2,6 +2,7 @@
 
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import { LayoutDashboard, Map, Zap, Wrench, Settings } from "lucide-react";
 
 export function Showcase() {
     const ref = useRef(null);
@@ -243,13 +244,28 @@ export function Showcase() {
                             <nav className="flex-1 px-3">
                                 {["Overview", "Network Map", "Energy Analytics", "Maintenance", "Settings"].map((item, i) => {
                                     const isActive = activeTab === item;
+                                    
+                                    // Map string to icon
+                                    const getIcon = () => {
+                                        switch(item) {
+                                            case "Overview": return <LayoutDashboard size={14} className={isActive ? "text-blue-400" : "text-[#8e8e99]"} />;
+                                            case "Network Map": return <Map size={14} className={isActive ? "text-blue-400" : "text-[#8e8e99]"} />;
+                                            case "Energy Analytics": return <Zap size={14} className={isActive ? "text-blue-400" : "text-[#8e8e99]"} />;
+                                            case "Maintenance": return <Wrench size={14} className={isActive ? "text-blue-400" : "text-[#8e8e99]"} />;
+                                            case "Settings": return <Settings size={14} className={isActive ? "text-blue-400" : "text-[#8e8e99]"} />;
+                                            default: return null;
+                                        }
+                                    };
+
                                     return (
                                         <div 
                                             key={i} 
                                             onClick={() => setActiveTab(item)}
                                             className={`px-3 py-2.5 rounded-lg mb-1 flex items-center gap-3 text-[13px] font-medium transition-colors cursor-pointer ${isActive ? "bg-[#1c2033] text-blue-400 border border-blue-500/20" : "text-[#8e8e99] hover:bg-[#15151e] hover:text-[#c4c4cc]"}`}
                                         >
-                                            <div className={`w-4 h-4 rounded-[4px] ${isActive ? "bg-blue-500/20" : "bg-[#2a2a35]"}`} />
+                                            <div className={`w-5 h-5 flex items-center justify-center rounded-[5px] ${isActive ? "bg-blue-500/20" : "bg-[#2a2a35]"}`}>
+                                                {getIcon()}
+                                            </div>
                                             {item}
                                         </div>
                                     );
