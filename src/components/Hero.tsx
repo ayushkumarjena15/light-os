@@ -195,9 +195,30 @@ export function Hero() {
                                 priority
                             />
                         </h1>
-                        <p className="text-[#a3a3a3] font-semibold text-[16px] md:text-[22px] tracking-wide mt-[-20px] md:mt-[-40px] drop-shadow-sm font-[var(--font-body)] text-center relative z-10">
+                        <p className="text-[#a3a3a3] font-semibold text-[16px] md:text-[22px] tracking-wide mt-[-20px] md:mt-[-40px] drop-shadow-sm font-[var(--font-body)] text-center relative z-10 mb-8 md:mb-12">
                             Powered By Autometra Technologies
                         </p>
+
+                        {/* Direct Call to Action */}
+                        <motion.div variants={lineVariants} className="flex flex-col sm:flex-row gap-5 items-center justify-center relative z-20">
+                            <button 
+                                onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+                                className="px-10 py-4 rounded-full text-[17px] font-bold text-[#0a0a0a] transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1"
+                                style={{ 
+                                    background: "linear-gradient(135deg, #e8c06a, #c9963d)", 
+                                    boxShadow: "0 8px 30px rgba(232, 192, 106, 0.35), inset 0 2px 0 rgba(255,255,255,0.2)"
+                                }}
+                            >
+                                Launch LightOS
+                            </button>
+                            <button 
+                                onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
+                                className="px-10 py-4 rounded-full text-[17px] font-bold text-white transition-all duration-300 border border-[rgba(255,255,255,0.15)] hover:bg-[rgba(255,255,255,0.05)] hover:border-[#3b82f6] hover:scale-[1.03]"
+                                style={{ backdropFilter: "blur(10px)" }}
+                            >
+                                Get Started
+                            </button>
+                        </motion.div>
                     </motion.div>
                 </motion.div>
             </div>
