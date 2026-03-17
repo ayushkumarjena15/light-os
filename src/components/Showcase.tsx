@@ -1,12 +1,26 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 
 export function Showcase() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.2 });
     const [activeTab, setActiveTab] = useState("Overview");
+    const tabs = ["Overview", "Network Map", "Energy Analytics", "Maintenance", "Settings"];
+
+    // Auto-cycle tabs every few seconds
+    useEffect(() => {
+        if (!isInView) return; // Only start cycling when the dashboard is visible
+        const interval = setInterval(() => {
+            setActiveTab(current => {
+                const currentIndex = tabs.indexOf(current);
+                return tabs[(currentIndex + 1) % tabs.length];
+            });
+        }, 3000); // changes every 3 seconds
+        
+        return () => clearInterval(interval);
+    }, [isInView, tabs]);
 
     const renderMainContent = () => {
         switch (activeTab) {
