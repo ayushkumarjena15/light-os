@@ -107,39 +107,44 @@ export function About() {
                         className="flex flex-col relative z-10"
                     >
                         <motion.div variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}>
-                            <span className="section-label relative z-10" style={{ textShadow: "0 2px 10px rgba(0,0,0,0.8)" }}>02 — About LightOS</span>
-                        </motion.div>
+                        <span className="section-label relative z-10" style={{ textShadow: "0 2px 10px rgba(0,0,0,0.8)" }}>01 — About LightOS</span>
+                    </motion.div>
                         <motion.h2 
                             variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}
-                            className="font-[var(--font-heading)] text-[clamp(32px,5vw,56px)] text-white font-bold leading-[1.12] mb-5 tracking-tight text-left relative z-10"
+                            className="font-[var(--font-heading)] text-[clamp(32px,5vw,56px)] text-white font-bold leading-[1.12] mb-8 tracking-tight text-left relative z-10"
                             style={{ textShadow: "0 4px 24px rgba(0,0,0,0.9), 0 2px 8px rgba(0,0,0,0.7)" }}
                         >
-                            Born from a Simple <span className="text-[#3b82f6]">Idea</span>
+                            Building the <span className="text-[#3b82f6]">Future</span> of Lighting
                         </motion.h2>
-                        <motion.p 
-                            variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}
-                            className="text-base text-[#f3f4f6] font-medium mb-[18px] leading-[1.75] relative z-10"
-                            style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)" }}
-                        >
-                            What if technology could feel as natural as light itself? LightOS was built on this principle — an
-                            operating system that illuminates your workflow, not complicates it.
-                        </motion.p>
-                        <motion.p 
-                            variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}
-                            className="text-base text-[#f3f4f6] font-medium mb-[18px] leading-[1.75] relative z-10"
-                            style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)" }}
-                        >
-                            Our team of engineers, designers, and dreamers spent 4 years perfecting every pixel, every animation,
-                            and every line of code to create something truly extraordinary.
-                        </motion.p>
+                        
+                        <motion.div variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }} className="mb-5 relative z-10">
+                            <h3 className="text-lg font-bold text-blue-400 mb-2 uppercase tracking-wide text-[13px]">What is it?</h3>
+                            <p className="text-[#f3f4f6] font-medium leading-[1.65]" style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9)" }}>
+                                LightOS is a small, smart device that upgrades ordinary streetlights into a connected network. It allows cities to monitor, control, and fix all their lights remotely from one simple dashboard.
+                            </p>
+                        </motion.div>
+
+                        <motion.div variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }} className="mb-5 relative z-10">
+                            <h3 className="text-lg font-bold text-blue-400 mb-2 uppercase tracking-wide text-[13px]">Who is it for?</h3>
+                            <p className="text-[#f3f4f6] font-medium leading-[1.65]" style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9)" }}>
+                                It's built for city governments, rural villages, residential complexes, and industrial parks that want an affordable way to modernize their public lighting and save money.
+                            </p>
+                        </motion.div>
+
+                        <motion.div variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }} className="mb-7 relative z-10">
+                            <h3 className="text-lg font-bold text-blue-400 mb-2 uppercase tracking-wide text-[13px]">What problem does it solve?</h3>
+                            <p className="text-[#f3f4f6] font-medium leading-[1.65]" style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9)" }}>
+                                It automatically stops the massive waste of electricity from streetlights being left on during the day. It also instantly detects broken bulbs so no one has to report them, cutting down expensive manual inspections.
+                            </p>
+                        </motion.div>
 
                         {/* Stats */}
-                        <motion.div variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }} className="flex gap-10 mt-9 flex-wrap">
-                            <AnimatedCounter target={99.9} suffix="%" label="Uptime" />
+                        <motion.div variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }} className="flex gap-10 mt-2 flex-wrap pb-8">
+                            <AnimatedCounter target={70} suffix="%" label="Energy Saved" />
                             <div className="w-px h-10 self-center" style={{ background: "linear-gradient(180deg, transparent, rgba(59,130,246,0.2), transparent)" }} />
-                            <AnimatedCounter target={2.8} suffix="s" label="Boot Time" />
+                            <AnimatedCounter target={60} suffix="%" label="Lifespan Boost" />
                             <div className="w-px h-10 self-center" style={{ background: "linear-gradient(180deg, transparent, rgba(59,130,246,0.2), transparent)" }} />
-                            <AnimatedCounter target={50} suffix="M+" label="Users" />
+                            <AnimatedCounter target={45} suffix="M+" label="Target Lights" />
                         </motion.div>
                     </motion.div>
                 </div>

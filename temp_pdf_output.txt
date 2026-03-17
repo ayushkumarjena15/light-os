@@ -1,0 +1,844 @@
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+“Building the Future of Smart Lighting ” 
+ 
+                              Autometra Technologies  Pvt. Ltd.  
+                              Bhubaneswar, Odisha , India  
+                              Email  ID:   info@lightos.in  
+ keshab @lightos .in 
+                                                  sidhu @lighto s.in 
+                              Contact :  +91 9934484 259 (Sidhu Kumar Singh)  
+                                               +91 6371775670  (Keshab Sharma)  
+                              Website: https:// www.lightos.in  
+ 
+ 
+ 
+ 
+ 
+   2  
+  
+ 
+ 
+                            Team behind the Innovation  
+1. Executive Team  
+Member   Focus Area  Key Expertise & Contribution  
+Keshab Sharma  Team Lead, 
+Vision,  
+Communication  
+& IoT  Expertise exists in firmware development.  ESP32 
+microcontrollers also fall under this.  Low-power circuit 
+design is another specialty, drives the core LCU device 
+intelligence.  
+Sidhu Kumar Singh  Business  
+Management  & 
+Market Strategy  Focus is given to market penetration.  Customer 
+acquisition receives considerable effort.  Strategic 
+partnerships represent another major objective.  We 
+look forward to the changes he may be implementing.  
+Pratik Kumar Sah  Full Stack & 
+Backend 
+Business Logic  System Design, review software support, optimizes 
+system performance and database efficienc y.   
+Ravi Kant Thakur  Media 
+Marketing & 
+Graphics and 
+Design  Ensures all the Design and graphics work,  supply 
+reliable design , and provide marketing assistance 
+through social media.  
+      
+ 2.  Advisory Mentors  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Member  Expertise & 
+Guidance  Focus Area for LightOS  
+Dr. 
+Raghvendra 
+Kumar  Patent & Grant 
+Support  Effectively guides the LightOS team.  He assists us through 
+patent filing.  Grant application processes are also part of his 
+role.  He offers insight into product development.  Also, he helps 
+with field deployment strategies.  His experience bridges the 
+gap, innovation meets practical needs.  
+Dr. Sasank 
+Sekhar 
+Panda  Academic & 
+Research 
+Mentorship  His sharp analysis has been key.  It shapes the team's direction, 
+fostering team growth.  He understands both technology and 
+structure.  He offers strong, insightful advice.  It boost  the very 
+core foundation of the project , and makes it more viable for 
+long -term viability. He manages important documentation. His 
+continuous advice motivates us and It has driven project 
+momentum.   
+Mr. Ranjit 
+Patnaik  Hardware 
+Support & 
+Early 
+Prototyping  Initial hardware development and testing involved several 
+steps.  Early prototypes emerged of the LightOS system , His 
+technical input mattered.  His hardware resources provided 
+support for everyone . 3  
+  
+ 
+ 
+ CONTENT  
+ 
+ 
+1.   The Problem                                                                                
+1.1 Problem Overview  
+1.2 Key Problems and Issues  
+1.3 Existing Infrastructure and Challenges  
+2.   The Vision  
+3.   The Solutio n 
+3.1   Technological Overview  
+3.2    Solution Versioning  
+4. The Market  Potential  of Innovation  
+                    4.1 Target Customer Segments   
+                    4.2 Market Potential Analysis  
+                    4.2 Key Industry Growth Drivers   
+                    4.3 Potential  Areas  of Application  in the Market  
+5. Financial Projections and Return on Investment (ROI)  
+5.1 Unit Economics & Core Assumptions  
+5.2 Annual Operating Cost: Traditional vs. LightOS  
+  5.3 Net Savings Per Light (The ROI)  
+  5.4 Financial  Impact Summary  
+6. Business Model  
+6.1 Overview  
+6.2 Revenue Model  
+6.3 Cost Mod el 
+6.4 Profit & Ma rgin Summary  
+6.5 Subscription Model  
+6.6 Fina ncial Scaling Projection  
+6.7 Go-to-market  Strateg y  
+6.8 Pricing Phi losophy  
+6.9 Value Prop osition  
+7. Current T raction  
+8. Funding History  and Investors  
+8.1 Funding and Milestones  
+9. Competitive Landscap e 
+10.  Future Vision  
+10.1 AI Readiness  
+10.2 Open Architecture & IoT Integration  
+10.3 Business Perspective  
+10.4 Sustainability & Environmental Contribution  
+ 
+ 
+ 4  
+  
+ 
+ 
+  
+1. The Problem : 
+1.1 Problem Overview:  
+Our targeted problem is the traditional public lighting system  that operates  across 
+the country . In 2015 the government of India  launched an initiative for the public 
+light infrastructure,  Street Lighting National Program (SLNP) . The pro gram aimed to 
+replac e Conventional Street  light  with Energy Efficient  and Smart LED light  all 
+across the nation . In addition, solar street lights are also being deployed in poor -
+connectivity regions , even  though after all these initiatives , the ground -level reality 
+still faces major inefficienc ies in operation, monitoring and maintenances  
+ 
+1.2  Key P roblem s and Issues:  
+1. Manual Intervention  and Irregular Inspection : 
+• Streetlights are still operated manually which requires human resources 
+therefore increasing the operational costs.  
+• Due t o lack of discipline  or accountab ility, street lights  often  
+function  at wrong time , delay ed at night  operation  time or may left 
+active during the day.  
+• Field Observation  in rural areas shows that over 70% of streetlights function 
+irregular ly, which means either running during day time or remaining OFF at 
+night.  
+• Handling thousands of streetlights,  with timely activation and deactivation 
+seems challenging without proper budget allocation and manpower , causes 
+poor maintena nces , month  long  outages and raises security and safety 
+concerns.  
+• Due to irregular or 24-hour  operation  of lights,  the life expectancy decreases 
+by up to  60% , increasing  both power consumption and frequent 
+replacements  costs . 
+ 
+1.3  Existing  Infrastructure and Challenges  
+1. Control Switch es:                                                                                          
+• Conventional control switches  require  an extra parallel  cabling , which is not 
+feasible  under modern single line distribution plans of different , state electricity 
+distribution       companies.  
+2. LDR-Based Systems:  
+• Light Dependent  Resistors (LDRs) are not that reliable  when it comes to  tracking 
+the light failures , and differentiating between natural day light and  artificial light  
+conditions.   
+3.  Smart City-Focused I nitiative :  
+• Existing smart streetlight solution s are particularly focusing on smart cities, as 
+integration or replacement of traditional infrastructure complex and economically 
+unviable for rural and semi -rural areas . 
+ 
+ 
+5  
+  
+ 
+ 
+  
+4. Solar Street Light  Challenges:  
+• Although the  solar street light initiatives are  successfully , but the post 
+deployment  maintenance is neglected by the authorities  as well as  
+citizens  
+• Many tenders are for poor -connected region s like rural and semi -rural  
+and requires  mostly  new pole,  solar panel , fixtures , so the question arises  
+what  after the tender completed. Who will  be taking care of the lights if 
+they are non-functional  after 1 or 2 years?   
+ 
+2. Our Vision : 
+  Our Company Autometra Technologies , with  product  LightOS  aims to  bridge the 
+gap between traditional infrastructure and modern smart light control by 
+developing  solutions that : 
+• Support both rural and urban development  through  scalable infrastructural 
+automation . 
+• Transform  India’s Public Lighting Infrastructure  into a global example of 
+revolutionary innovation and optimization.   
+• Enable the  LightOS  Dashboard  to control  thousands of light s anytime , from 
+anywhere . 
+• Give each public light a unique identity over internet , for easy monitoring and 
+maintenance.  
+• Empower lights to become smart enough to self-decision -making  system s, 
+capable of detecting and reporting the issues to the central command center 
+and requesting  for maintenance.  
+• Promote responsible u tilization of  the public  resource , higher output by 
+reducing extensive  power consumption, extending  light lifespan  and 
+minimizing  operational costs .  
+• Replace costly imported  Smart - Light solution  with our economical  Indian 
+solution . 
+• Support for Digital India: Foster smart infrastructure development that aligns  with the 
+Digital India initiative, enhancing the digital transformation of public  utilities.  
+• Vision  for Viksit  Bharat  2047: Contribute  towards  the long -term  vision  of Viksit  Bharat 
+2047, by promoting sustainable, tech -driven solutions that improve  public  
+infrastructure  and quality  of life across  India.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 6  
+  
+ 
+ 
+  
+3. The Solution:  
+ 
+The LightOS brings  a economical and optimized  approach  for Indian  public  light  
+infrastructur al and development by incorporating  advanced  technologies  such  as IoT, 
+LoRa,  Wi-Fi Mesh,  Satellite Communication and Artificial Intelligence and Machine  
+learning . 
+ 
+                    3.1 Technological  Overview  
+ 
+a. Real -Time Automation:  
+• Unlike traditional systems that rely on manual switching, LDR            circuits or basic  
+timers,  LightOS  includes  real-time  automation,  utilizing  sensors  and 
+programmable logic to adjust lighting based on environmental conditions.  
+• This ensures lights are active only when needed, drastically reducing 
+unnecessary  electricity consumption. The system  can also adapt to  local 
+variations in  sunrise and  sunset times, offering a more dynamic and 
+efficient solution than Traditional  lighting  systems.  
+b.  Fault  Detection  and Reporting:   
+• One of the impressive  features  of SPLS  is its built -in fault  detection  mechanism.  The 
+system  continuously  monitors  the status  of each streetlight and automatically 
+identifies malfunctions such as burnt -out bulbs or  wiring  issues.   
+• This is communicated  to a central  system,  reducing  time  of light  and late 
+maintenance issues. Traditional street lighting often requires manual  inspections, 
+leading to delays in repairs and extended periods of darkness in public  areas.  
+c.  Energy  Efficiency  through  Advanced  Control:   
+• LightOS  leverages energy -efficient  technologies,  including  the use of LED lighting  
+combined  with  automated  control systems.  
+• By switching  lights  on and off based  on real-time  data,  energy  savings  are 
+maximized,  directly  reducing  electricity  bills.  
+d.  Scalability  and Flexibility:   
+• The system  is designed  to be easily  scalable,  capable  of being  deployed  across  
+both  rural  and urban  settings  with  minimal  infrastructure changes.   
+• Its flexible  architecture  allows  for the integration  of various  communication  
+protocols, whether in areas with access to stable internet or in rural zones using  
+mesh  networks  or local  Wi-Fi solutions . 
+e. Integration  with  Existing  technology:   
+• LightOS is easily  compatible  with  the existing  streetlight  and can be easily  installed  
+across  the operating  streetlight.  An enclosed  device  will be provided  that will be best  
+suited  for the running  streetlight . 
+f. Sustainability  and Environmental  Impact:   
+• By reducing  energy  waste  and optimizing  streetlight  operation,  LightOS  supports  
+broader  sustainability  goals,  contributing  to the reduction of greenhouse gas 
+emissions. Municipalities and rural Gram panchayats  can benefit  from  significant  
+cost savings  and also promote  eco-friendly  practices . 
+7  
+  
+ 
+ 
+ Solution Versioning:  
+The Solution versioning helps to meet and understand different stakeholders’ 
+requirements  utilization and demands , the following versions/model meets different 
+requirements : 
+  
+Version  Name  Connectivity  Description  Core Features  Stake Holders  
+v1.0  LightOS Local  Offline (Wi -
+Fi /hotspot)  Standalone lighting 
+control system 
+using ESP 
+webserver — no 
+internet required.  Local scheduling, 
+RTC-based 
+automation, manual 
+ON/OFF, local 
+dashboard.  Rural areas, 
+campuses, 
+small colonies.  
+v2.0  LightOS 
+Remote  Cloud -
+enabled  Internet -connected 
+version for remote 
+scheduling and 
+control.  Cloud dashboard 
+(Node.js + 
+MongoDB), real -time 
+control, multi -user 
+access, logs & 
+analytics.  Municipalities, 
+smart towns, 
+institutions.  
+v3.0  LightOS Smart  Cloud + 
+Sensor -
+driven  Intelligent lighting 
+with automation 
+and data learning.  ML-based brightness 
+control, fault alerts, 
+predictive 
+maintenance, energy 
+analytics.  Smart cities, 
+tech parks, 
+gated 
+societies.  
+v4.0  LightOS Grid  Hybrid 
+(Mesh + 
+Solar)  Autonomous 
+distributed system 
+with solar power 
+and mesh 
+communication.  Solar -powered 
+nodes, LoRa/Zigbee 
+mesh, local fallback 
+when offline, OTA 
+updates.  City-wide 
+grids, 
+industrial 
+zones.  
+v5.0  LightOS One  Unified IoT 
+Platform  Complete IoT 
+ecosystem 
+managing lighting 
+and other utilities.  Integration with 
+other city services 
+(traffic, water), APIs, 
+central command 
+dashboard.  Governments, 
+Smart City 
+missions, 
+global 
+partners.  
+ 
+  8  
+  
+ 
+ 
+ 4. The market  potential  
+ 
+The Indian Smart Street Lighting Industry  is undergoing a rapid digital transformation 
+driven by the push for  energy efficiency, automation, and sustainable infrastructure.   
+According to industry estimates, the Indian smart street lighting market was valued at  USD 
+58.3 million in 2024  and is projected to grow to  USD 455 million by 2035, registering a  CAGR 
+of ~20.3% (2025 –2035).  
+This market encompasses the  hardware, software, connectivity, and integrated service 
+ecosystem  required for intelligent street lighting control — including  remote monitoring, 
+automated scheduling, real -time fault detection,  and energy optimization.   
+ 
+ 4.1 Target Customer Segments   
+SPLS (Smart Public Lighting System) is designed to serve multiple high -potential verticals:   
+•  Urban Local Bodies (ULBs)  and Municipal Corporations  under the  Smart Cities Mission   
+• Government -led programs  such as the  Street Lighting National Programme (SLNP)   
+• Private infrastructure developers,  industrial parks,  special economic zones (SEZs), and  gated 
+communities   
+• Rural and hilly regions, where  standalone or low -connectivity  lighting automation is critical 
+for safety and cost efficiency       
+  
+4.2 Market Potential Analysis   
+India currently operates over  45+ million public street lights, with nearly  60% (≈ 27 
+million)  identified as potential candidates for smart automation over the next decade.   
+ 
+    Hardware Market (One -time Installation)   
+Estimat ed Adaptation : 21 million  Units  
+Average Device Cost : ₹600 -₹800 per unit (depending  on model)  
+Market potential:  ₹12,600 crore and ₹16,800 crore.  
+ 
+            Software & Services Market (Recurring Annual Revenue)   
+Cloud and remote monitoring services:  ₹20/per unit light monthly   
+Monthly Market Potential:  ₹42 crore  
+Annual Recurring Market Potential (ARR):  ₹504 crore  
+Total Addressable Market (Hardware + Software):  ₹13,100 –₹17,300 crore (India)  
+ 
+         4.3 Key Industry Growth Drivers   
+i. Government Initiatives & Policy Support   
+• Programs such as  SLNP (Street Lighting National Programme)  and the  Smart Cities 
+Mission  are accelerating the adoption of intelligent lighting systems.   
+• Public -Private Partnerships (PPP) and  energy service company (ESCO)  models are 
+incentivizing municipalities to adopt smart automation solutions.   
+ 
+ 
+ 9  
+  
+ 
+ 
+ ii. Energy Efficiency Targets   
+• Street lighting accounts for  1–2% of India’s total electricity use.   
+• Smart systems can reduce  energy consumption by 50 –70%, driving major cost savings 
+for local bodies and DISCOMs.   
+• Integration with  IoT-based energy analytics  aligns with national sustainability goals.   
+iii. Urbanization & Infrastructure Expansion   
+• The rapid growth of  tier-2 and tier -3 cities  is creating demand for  automated, 
+centrally managed lighting systems  across highways, industrial corridors, and public 
+zones.   
+• Infrastructure modernization  and ESG compliance  (Environmental, Social, and 
+Governance) are further accelerating smart lighting investments.   
+ 
+  4.4 Potential  Areas  of Application  in the Market  
+i. Residential  Communities:  
+• It can be installed in gated communities and apartment complexes, ensuring  security  
+lighting  with  efficient  energy  use. 
+ii. Rural  Areas:  
+• Can be implemented in rural panchayats and villages to improve public lighting with a  
+cost-effective  and scalable  solution.  
+iii. Public  Institutions:  
+• Applicable in educational campuses, government buildings, and hospitals,  providing  
+secure,  well-lit environments  while  reducing  operational  costs.  
+iv. Highway  Lighting:  
+• The long  highways  of India  contain  a high  number  of streetlights  that needs  to be 
+regulated. LightOS  can monitor and regulate the street light and automatically detect any  
+fault.  
+v. Urban  Public  Lighting:  
+• Ideal for city streets, highways, and public parks where efficient lighting management  is 
+crucial  for safety  and visibility.  
+vi. Industrial  Complexes:  
+• Useful in industrial zones, warehouses, and factories where automated and optimized  
+lighting  can reduce  energy  consumption  and maintenance  costs.  
+vii. Smart  Cities  projects:  
+• Fits seamlessly  into smart  city projects,  where  IoT solutions  are used  for improving   
+infrastructure  and urban  services.  
+viii. Border  Areas:  
+• It can help in knowing the status of streetlight deployed across border areas and may 
+help in automated switching (on and off) at any time if any vulnerability caused.    
+  
+ 
+ 
+          5.  Financial Projections and Return on Investment (ROI)  
+Objective:  To demonstrate that LightOS is a self -funding investment that converts 
+massive Operational Expenditure (OPEX) into measurable, recurring savings through 
+Dynamic Optimization  and Proactive Fault Remediation (PFR) . 
+ 
+5.1 Unit Economics & Core Assumptions  
+Parameter  Value  Details  
+Electricity Tariff 
+(Odisha)  ₹6.50 / kWh  (650 paisa)  Rate used for all cost calculations.  
+Traditional Operation  12 hours/day  Standard assumed run -time for 
+unmanaged lighting (e.g., 50W/80W).  
+LightOS Optimized 
+Lights  10W LED  running for 8 
+hours/day  Your specified reduced load and 
+operational time for the managed light.  
+LightOS LCU Device 
+Consumption  Active:  10W (10 hours/day) 
+/Hibernation:  3W (14 
+hours/day)  Power consumed by the Control Unit 
+itself.  
+LightOS LCU 
+Subscription  ₹240 / light / year  Recurring OPEX for software, cloud, and 
+PFR alerts.  
+ 
+ 
+5.2 Annual Operating Cost: Traditional vs. LightOS  
+A. Total Cost of Traditional System (Baseline)  
+The light runs unmanaged for 12 hours at full wattage.  
+Light 
+Wattage  Daily Consumption (12h)  Annual Energy Cost (≈ Total 
+Cost)  
+80W  960 Wh  ₹2,277.60  
+50W  600 Wh  ₹1,423.50  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+  
+ 
+ 
+          B. Total Cost of LightOS Managed System (Optimized OPEX)  
+This figure represents the Total Annual Cost (B)  for running the LightOS solution, 
+including the optimized light's energy, the LCU device's energy, and the subscription fee.  
+i. LightOS Optimized Energy Consumption  
+This calculates the energy cost for the optimized 50W LED Light  running 8 hours, 
+and the LCU device  running 24 hours.  
+Operational 
+Components  LCU Active 
+Mode 
+(10W/10h)  LCU 
+Hibernation 
+Mode 
+(3W/14h)  Daily 
+Consumption 
+(Wh) for Light 
+(50W/8h)  Daily Consumption 
+(Wh) for Light 
+(80W/8h)  
+Energy 
+consumption  
+(₹/ day)  100Wh x 
+₹6.50/1000= 
+₹0.65   42 Wh x 
+₹6.50/1000 
+=₹0.273  400 Wh x 
+₹6.50/1000 
+=₹2.60  640 Wh x ₹6.50/1000 
+=₹4.16  
+Annual 
+Energy Cost  ₹237.35  ₹99.64  ₹949.00  ₹1518.40  
+ 
+ii. LightOS Grand Total Annual OPEX (B)  
+Cost Component  50W Light   80W Light  
+LCU (Active + 
+Hibernation)  ₹336.99 +  ₹949 ₹336.99  + ₹1518.40  
+Annual Software 
+Subscription  ₹20 x 12 month  = ₹240.00  
+LightOS Total Annual 
+OPEX (B)  ₹1285.99  ₹2095.39  
+ 
+5.3 Net Savings Per Light (The ROI)  
+The Net Savings is the direct difference between the Traditional Cost (A)  and the 
+LightOS Total Annual OPEX (B) . 
+Light 
+Wattage  Traditional 
+Annual Cost 
+(A) LightOS Annual 
+OPEX (B)  Net Annual 
+Savings (A - B) Effective OPEX 
+Reduction  
+50W  ₹1,423.50  ₹1285.99  ₹137.51  9.66%  
+80W  ₹2,277.60  ₹2095.39  ₹182.21  8.00%  
+    
+  
+ 
+ 
+           5.4 Financial  Impact Summary  
+• Guaranteed Savings:  By migrating to LightOS, customers achieve a guaranteed annual 
+OPEX reduction of 66.4%  on their highest -wattage lights, even after accounting for the 
+subscription fee.  
+• Self-Funding Investment:  The substantial annual savings ensures that the initial 
+hardware CAPEX is recouped quickly, delivering a swift and compelling Return on 
+Investment (ROI) . 
+• Additional Savings:  This calculation does not include the reduction in labor and operational 
+costs achieved through Proactive Fault Remediation (PFR) , which can add another 10 -15% 
+to total OPEX savings.  
+ 
+6. Business Model  
+6.1 Overview  
+   Our company Autometra Technologies  operates on a hybrid business model which 
+combin ing hardware sales  (CAPEX) and LightOS Software  (SaaS) and maintenance 
+subscription  (OPEX) . The business model ensures both immediate capital gains  and long -
+term  subscription support.  
+6.2 Revenue  Model  
+Stream  Description  Pricing  Frequency  
+Hardware (Device 
+Sales)  Sale of LightOS Control 
+Units (LCU) to 
+municipalities, industries, 
+and housing projects.  ₹1,500 – ₹1,800 per unit  One-time  
+Software & Cloud 
+(SaaS)  LightOS Dashboard for 
+monitoring, scheduling, 
+and analytics.  ₹20 – ₹30 per light / 
+month  Recurring  
+Maintenance 
+Contracts (AMC)  Annual maintenance and 
+system health check.  ≈ 10 % of hardware 
+value  Yearly  
+Data & Analytics 
+(Future)  Energy reports, predictive 
+insights, and AI -based 
+optimization.  Custom plan  Recurring  
+ 
+6.3 Cost Model  
+The cost model is divided into CAPEX (Capital Expenditure) and OPEX (Operational 
+Expenditure):  
+ 
+Category  Description  Examples  
+CAPEX  One-time costs for 
+hardware design, R&D, 
+tooling, and initial setup.  PCB design, testing equipment, 
+software licensing.  
+OPEX  Recurring costs for 
+operations and services.  Cloud hosting, API gateway, 
+maintenance staff, customer support  
+Hardware revenue supports CAPEX recovery, while recurring SaaS and AMC subscriptions 
+sustain OPEX, ensuring financial self -sufficiency beyond the first fiscal year.  
+ 
+ 
+   
+  
+ 
+ 
+          6.4 Profit & Margin Summary  
+Type Avg. Cost  Selling Price /unit Profit  Profit Margin  
+LightOS Local (v1)  ₹795 ₹1200 ₹405 50.9%  
+LightOS Remote  
+Standard (v2)  ₹855 ₹1300 ₹445 52.0% 
+LightOS Smart  
+Advanced (v3)  ₹1072 ₹1600 ₹528 49.3 % 
+LightOS Grid  
+Pro (v4)  ₹1297.5  ₹2000 ₹702.5  54.1% 
+LightOS One 
+Ecosystem  
+Projects)  ₹2880 ₹4000 ₹1120 38.9 % 
+Software (SaaS)  
+(Monthly)  ₹5 (up to v3)  
+  ₹8 (above v3)  ₹20–₹30 
+(Depending upon the 
+version)  ₹18.5 (Avg.)  85% -92%  
+Annual 
+Maintenance  
+Cost (AMC)  — 10% of hardware value   20–40%  
+  
+6.5 Subscription Model  
+Every 1,000 lights  onboarded generates ₹2.4–₹3.0 lakh ARR , providing 
+predictable and scalable income. Once hardware is deployed, the recurring 
+software revenue grows automatically without any additional CAPEX.  
+ 
+6.6 Financial Scaling Projection  
+Year  Units Deployed  ARR (₹ lakhs ) Total Revenue 
+(₹ lakhs ) Net Profit Margin  
+2026      
+2027      
+2028      
+ 
+ 
+ 
+6.7 Go-to-Market Strategy  
+1. B2G (Business -to-Government): Smart City Mission, SLNP, and rural electrification 
+projects.  
+2. B2B (Business -to-Business): Builders, industrial parks, and private campus projects.  
+3. Pilot -to-Scale Model: Begin with localized deployment (50 –100 lights) → expand 
+city-wide.  
+4. Channel Partners: Tie -ups with lighting manufacturers and contractors for faster 
+scale.  
+ 
+6.8 Pricing Philosophy  
+1. Hardware: Minimum 3× cost multiplier to cover production, warranty, and R&D.  
+2. Software: Minimum 5× cost multiplier to cover hosting, data, and service support.  
+3. Aim for break -even within 18 months of initial deployment.  
+ 
+6.9 Value Proposition  
+1. Low-cost, Made -in-India alternative to imported smart lighting systems.  
+2. Offline + online operability ensures adoption across all terrains.  
+3. Recurring service model provides sustainable income for long -term scalability.  
+   
+  
+ 
+ 
+          7. Current Traction  
+Summarize d the core technical and IP milestones achieved to date, demonstrating execution 
+and risk reduction.  
+ 
+Milestone  Timeframe  Key Achievement  Risk Mitigated  
+1. Hardware 
+Feasibility 
+Proven  Nov 2024  Working Prototype (v1.0, v2.0), 
+reached TRL (Technology readiness 
+level) 4, Built and range tested, 
+confirming all technical requirements 
+and changes applied.  Technical & 
+Feasibility Risk  
+2. Product 
+Viability 
+Confirmed  Feb 2025   Dashboard is fully functional, capable 
+of real -time data ingestion.  Software & 
+Integration Risk  
+3. Core 
+Technology 
+Secured   
+April 2025  Patent application initiated for our 
+proprietary, Application ID: 
+202531040515  IP (Intellectual 
+Property) Risk  
+ 
+8. Funding History  and Investors  
+The idea for LightOS was sparked by that very question: why can’t street lighting be 
+smart, efficient, and self -managing?  
+- The thought for the change started with an innovative mind to counter 
+one of the day to day to problem that we face but often neglect and it 
+was came into effect with a team effort.  
+- With no external backing, except our mentors, at the beginning, we invested 
+our own savings to turn a rough concept into a working prototype. That 
+early risk - financial and emotional alike - served as the bedrock for what 
+LightOS is now.  
+- Embracing the value of our early work, the Ministry of Micro, Small & 
+Medium Enterprises (MSME), Government of India, recognized our 
+innovation and partnered with us as a strategic funding partner to drive 
+our development and deployment path.  
+ 
+ 
+ 
+              8.1 Funding and Milestones:  
+Year Amount  (INR)  Investor  Purpose  
+2024 - 2025 15 thousand  Self-Funded  Concept validation and prototype 
+development (hardware + firmware)  
+2025 - 2026 6.9 Lakh  Govt. of India  Product refinement, infrastructure 
+setup, and pilot launch  
+ 
+   
+  
+ 
+ 
+           
+9. Competitive Landscape  
+ 
+Category  Competitor  Primary Focus  Market Scale  Key Strength  Identified Gap / 
+Weakness  
+ 
+ 
+ 
+Existing 
+Players  CITiLIGHT  Cloud -based 
+smart street 
+lighting systems 
+for cities  Large scale 
+(Metros, 
+Smart Cities)  Proven 
+deployments, 
+IoT integration  No offline mode, 
+high cost for small 
+projects  
+Neev Energy  Intelligent  lighting 
+with remote 
+monitoring  Large  
+municipal 
+projects  Adaptive 
+lighting, 
+remote 
+control  Limited modularity, 
+no offline /local 
+dashboard  
+Havells /Bajaj 
+/Syska  Hardware -led 
+smart lighting  Nationwide  Manufacturin
+g scale, brand 
+trust  Weak in IoT 
+software, no data 
+ownership control  
+ 
+ 
+Future  
+competitors  IoT Startups / 
+Smart City 
+Integrators  Low-cost IoT + 
+sensor solutions  Small to 
+medium  Rapid 
+innovation, 
+cloud -native  Lack of field 
+experience, 
+unreliable large -
+scale support  
+Government 
+Smart City 
+Consortiums  Public smart city 
+frameworks  Metro and 
+large 
+municipal  Policy 
+support, 
+funding access  Slow innovation 
+cycles, not flexible 
+for smaller projects  
+ 
+10. Future Vision  
+As the system evolves towards Version 4, and then Version 5, LightOS will certainly 
+integrate artificial intelligence. Real -time data analytics capabilities will be included too. 
+This  integration enables certain advantages:  
+10.1 AI  Readiness  
+• Predictive Energy Management:  Continuous monitoring of consumption helps predict 
+usage patterns. It allows automatic optimization of brightness levels. These brightness 
+adjustments are based on time, traffic and also the current weather conditions.  
+• Proactive Maintenance:  AI models will analyze fault data. They do so to forecast 
+potential failures. Downtime will be reduced, not to mention maintenance costs, but 
+more can be done.  
+• Anomaly Detection:  It can detect irregular power consumption, or outages very fast. 
+This will, or so we expect, improve operational efficiency in every aspect.  
+ 
+10.2 Open Architecture & IoT Integration  
+LightOS is built, as it stands, on an open architecture; and a modular one. Allowing it 
+seamless integration, we believe, with other smart infrastructure systems in time. Soon 
+enough, the same LightOS -enabled poles should be able to act as multi -purpose IoT 
+gateways, even supporting possibilities like:  
+• Public Safety Integration:  Cameras and various sensors can now monitor pedestrian 
+movement and traffic conditions; also important is monitoring public security in 
+real-time which means quickly addressing risks to our community.    
+  
+ 
+ 
+          • Environmental Monitoring:  Sensors will also integrate air quality and temperature 
+metrics; and noise levels too in an attempt to provide, hopefully actionable, data on 
+our collective impact. This is useful data, of course, for future city planning.  
+• Smart City Expansion:  These IoT -equipped poles can be said to form the backbone. 
+Certainly, they will for a broader smart infrastructure: they enable applications, say 
+like, waste management. Furthermore, they help to establish smart parking areas 
+and support of EV charging stations.  
+10.3 Business Perspective  
+The SPLS business model it is designed for both sustainability and for scalability as well. Future 
+initiatives surely include, eventually:  
+• On-Site Maintenance Teams:  Dedicated service units shall, in all likelihood, be 
+deployed regionally so that the response becomes rapid. Not just responding to issues; 
+a focus on preventing system failure, maintaining uptime and even system reliability 
+will be included.  
+• Data as a Service (DaaS):  The system will need scale, when scaling up; LightOS could 
+collect precious data. Think, on energy usage; even data collected on lighting 
+performance and of course urban activity! This data once made anonymous and 
+aggregated, could actually then be sold; to city hall and agencies needing solid metrics 
+upon which solid smart policy might exist in reality.  
+10.4  Sustainability & Environmental Contribution  
+LightOS  can definitely support India’s push, to its sustainability goals, it can assist their 
+commitment to becoming a Green Country. All goals can be met.  
+• Reduction in CO₂ Emissions:  Well -thought -out lighting schedules coupled; with well 
+executed, effective dimming can potentially cut a good amount; off, in particular 
+about 30 -40% energy reduction, lowering our carbon imprint.  
+• Cost effectiveness:  affordability to most places even really tiny towns or smaller 
+places is our sincere hope; they need it the most really.    
+  
+ 
+ 
+             
+                                            
