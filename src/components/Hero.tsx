@@ -228,11 +228,8 @@ export function Hero() {
                             background: "linear-gradient(180deg, #cc0000, #660000)",
                             boxShadow: "inset 0 1px 0 rgba(255,255,255,0.1), 0 5px 15px rgba(0,0,0,0.8)"
                         }}>
-                            {/* Headlights */}
-                            <div className="absolute top-[8px] right-[2px] w-[5px] h-[4px] bg-[#f5ead0] rounded-full" style={{
-                                boxShadow: "0 0 12px #f5ead0, 0 0 24px #e8c06a, 0 0 40px rgba(232,192,106,0.6)"
-                            }} />
-                            <div className="absolute top-[8px] right-[10px] w-[5px] h-[4px] bg-[#f5ead0] rounded-full" style={{
+                            {/* Headlight */}
+                            <div className="absolute top-[8px] right-[4px] w-[7px] h-[5px] bg-[#f5ead0] rounded-l-md rounded-r-lg" style={{
                                 boxShadow: "0 0 12px #f5ead0, 0 0 24px #e8c06a, 0 0 40px rgba(232,192,106,0.6)"
                             }} />
 
