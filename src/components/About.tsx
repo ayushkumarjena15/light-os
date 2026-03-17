@@ -82,7 +82,7 @@ export function About() {
                                     <Suspense fallback={null}>
                                         <Stage preset="rembrandt" intensity={1.5} environment="city">
                                             <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
-                                                <LightOSDevice scale={1} />
+                                                <LightOSDevice scale={0.85} />
                                             </Float>
                                         </Stage>
                                     </Suspense>

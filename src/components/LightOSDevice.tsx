@@ -90,16 +90,26 @@ export default function LightOSDevice(props: any) {
         <meshStandardMaterial color="#333333" metalness={0.9} roughness={0.5} />
       </mesh>
 
-      {/* Left Antenna */}
-      <mesh position={[-0.9, 1.4, 0]}>
-        <cylinderGeometry args={[0.03, 0.05, 0.8, 16]} />
-        <meshStandardMaterial color="#333333" metalness={0.9} roughness={0.5} />
-      </mesh>
-      {/* Left Antenna Tip (Red light) */}
-      <mesh position={[-0.9, 1.8, 0]}>
-        <sphereGeometry args={[0.05, 16, 16]} />
-        <meshStandardMaterial color="#ef4444" emissive="#ef4444" emissiveIntensity={2} />
-      </mesh>
+      {/* Side Mounted Antenna */}
+      <group position={[-0.82, 0.4, 0]}>
+        {/* Bracket attached to side */}
+        <mesh position={[-0.08, 0, 0]}>
+          <boxGeometry args={[0.2, 0.1, 0.15]} />
+          <meshStandardMaterial color="#222" metalness={0.8} roughness={0.6} />
+        </mesh>
+        
+        {/* Vertical Antenna Pole */}
+        <mesh position={[-0.15, 0.4, 0]}>
+          <cylinderGeometry args={[0.02, 0.03, 0.9, 16]} />
+          <meshStandardMaterial color="#333333" metalness={0.9} roughness={0.5} />
+        </mesh>
+        
+        {/* Antenna Tip (Red light) */}
+        <mesh position={[-0.15, 0.85, 0]}>
+          <sphereGeometry args={[0.04, 16, 16]} />
+          <meshStandardMaterial color="#ef4444" emissive="#ef4444" emissiveIntensity={2} />
+        </mesh>
+      </group>
 
       {/* Indicator LEDs */}
       <mesh position={[-0.5, -0.7, 0.42]}>
