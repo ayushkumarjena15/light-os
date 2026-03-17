@@ -6,63 +6,41 @@ import { motion, useInView } from "framer-motion";
 const products = [
     {
         tag: "01",
-        title: "Lightning Performance",
-        subtitle: "Boot in under 3 seconds.",
-        price: "Every interaction feels instant with our optimized kernel architecture.",
+        title: "Real-Time Automation",
+        subtitle: "Dynamic adaptation.",
+        price: "Utilizes sensors and logic to dynamically adjust lighting based on conditions.",
         bg: "#0a0a0a",
-        image: "/assets/latest/performance.png",
+        image: "/assets/latest/automation_real.png",
     },
     {
         tag: "02",
-        title: "Fortress Security",
-        subtitle: "Hardware-level encryption.",
-        price: "AI-driven threat detection. Your data stays yours.",
+        title: "Fault Detection",
+        subtitle: "Proactive reporting.",
+        price: "Continuously monitors status and automatically identifies malfunctions.",
         bg: "#0a0c0b",
-        image: "/assets/latest/security.png",
+        image: "/assets/latest/fault_real.png",
     },
     {
         tag: "03",
-        title: "Beautiful Interface",
-        subtitle: "Adaptive UI.",
-        price: "Responds to ambient light, time of day, and your preferences.",
+        title: "Energy Efficiency",
+        subtitle: "Maximum savings.",
+        price: "Combines LED technologies with automated data-driven control.",
         bg: "#0c0a0c",
-        image: "/assets/latest/interface.png",
+        image: "/assets/latest/energy_real.png",
     },
     {
         tag: "04",
-        title: "All-Day Battery",
-        subtitle: "Intelligent power management.",
-        price: "Extends battery life by up to 40% compared to other OS.",
+        title: "Scalability",
+        subtitle: "Seamless expansion.",
+        price: "Deployed across urban and rural settings via mesh and Wi-Fi networks.",
         bg: "#0c0c0a",
-        image: "/assets/latest/battery.png",
-    },
-    {
-        tag: "05",
-        title: "Seamless Sync",
-        subtitle: "Your devices work as one.",
-        price: "Files, settings, and apps flow across all your devices.",
-        bg: "#0a0c0c",
-        image: "/assets/latest/sync.png",
-    },
-    {
-        tag: "06",
-        title: "AI Power",
-        subtitle: "Built-in Intelligence.",
-        price: "Learns your workflow and automates repetitive tasks intelligently.",
-        bg: "#0c0b0a",
-        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=600",
-    },
+        image: "/assets/latest/scalability_real.png",
+    }
 ];
 
 export function Latest() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.2 });
-    const scrollRef = useRef<HTMLDivElement>(null);
-
-    const scroll = (dir: "left" | "right") => {
-        if (!scrollRef.current) return;
-        scrollRef.current.scrollBy({ left: dir === "right" ? 360 : -360, behavior: "smooth" });
-    };
 
     return (
         <section ref={ref} id="features" className="relative z-[20] py-[80px] overflow-hidden">
@@ -101,50 +79,19 @@ export function Latest() {
                     </motion.p>
                 </motion.div>
 
-                {/* Scroll Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-                    className="flex items-end justify-between mb-8"
-                >
-                    <div>
-                    </div>
-                    <div className="flex gap-2">
-                        <button
-                            onClick={() => scroll("left")}
-                            className="w-9 h-9 flex items-center justify-center rounded-full bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.12)] text-[rgba(255,255,255,0.6)] hover:bg-[rgba(255,255,255,0.14)] transition-all"
-                        >
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                <polyline points="15 18 9 12 15 6"/>
-                            </svg>
-                        </button>
-                        <button
-                            onClick={() => scroll("right")}
-                            className="w-9 h-9 flex items-center justify-center rounded-full bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.12)] text-[rgba(255,255,255,0.6)] hover:bg-[rgba(255,255,255,0.14)] transition-all"
-                        >
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                <polyline points="9 18 15 12 9 6"/>
-                            </svg>
-                        </button>
-                    </div>
-                </motion.div>
-
                 {/* Cards */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-                    ref={scrollRef}
-                    className="flex gap-4 overflow-x-auto pb-3 scroll-smooth"
-                    style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pb-3"
                 >
                     {products.map((p, i) => (
                         <motion.div
                             key={i}
                             whileHover={{ scale: 1.02, y: -4 }}
                             transition={{ type: "spring", stiffness: 300, damping: 22 }}
-                            className="flex-shrink-0 w-[300px] h-[450px] rounded-3xl overflow-hidden cursor-pointer relative group"
+                            className="w-full h-[450px] rounded-3xl overflow-hidden cursor-pointer relative group"
                             style={{ background: p.bg, border: "1px solid rgba(255,255,255,0.07)" }}
                         >
                             {/* Image Background */}

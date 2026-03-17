@@ -5,12 +5,10 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 
 const features = [
-    { icon: "⚡", title: "Lightning Performance", desc: "Boot in under 3 seconds. Every interaction feels instant with our optimized kernel architecture." },
-    { icon: "🛡️", title: "Fortress Security", desc: "Hardware-level encryption with AI-driven threat detection. Your data stays yours." },
-    { icon: "🎨", title: "Beautiful Interface", desc: "Adaptive UI that responds to ambient light, time of day, and your preferences." },
-    { icon: "🔋", title: "All-Day Battery", desc: "Intelligent power management extends battery life by up to 40% compared to other OS." },
-    { icon: "🌐", title: "Seamless Sync", desc: "Your devices work as one. Files, settings, and apps flow across all your devices." },
-    { icon: "🤖", title: "AI Assistant", desc: "Built-in AI that learns your workflow and automates repetitive tasks intelligently." },
+    { icon: "⚡", title: "Real-Time Automation", desc: "Utilizes sensors and programmable logic to dynamically adjust lighting based on environmental conditions and local sunrise/sunset times." },
+    { icon: "🛡️", title: "Fault Detection & Reporting", desc: "Continuously monitors streetlight status, automatically identifies malfunctions like burnt bulbs, and reports directly to the central system." },
+    { icon: "♻️", title: "Energy Efficiency", desc: "Maximizes energy savings and directly reduces electricity bills by combining LED technologies with automated data-driven control." },
+    { icon: "🌐", title: "Scalability & Flexibility", desc: "Easily deployed across urban and remote rural settings, utilizing internet, mesh networks, or local Wi-Fi seamlessly." },
 ];
 
 function FeatureCard({ feature, index }: { feature: typeof features[0]; index: number }) {
@@ -75,11 +73,9 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
 export function Features() {
     return (
         <section id="features" className="relative z-[20] py-[60px] overflow-hidden">
-            {/* Ambient glow */}
             <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 70% 45% at 50% 0%, rgba(59,130,246,0.05) 0%, transparent 60%)" }} />
             <div className="max-w-[1200px] mx-auto px-6">
-                {/* Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                     {features.map((feature, i) => (
                         <FeatureCard key={i} feature={feature} index={i} />
                     ))}

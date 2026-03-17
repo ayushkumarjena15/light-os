@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 
 const footerLinks = [
     { title: "Product", links: ["Features", "Pricing", "Download"] },
@@ -45,46 +46,14 @@ export function Footer() {
                 >
                     {/* Brand */}
                     <div className="flex flex-col gap-4">
-                        <div className="flex items-center font-[var(--font-heading)] text-[26px] font-extrabold leading-[1.02] tracking-[-2px]">
-                            <span className="text-white relative z-0">Ligh</span>
-                            {/* The Lamp "T" */}
-                            <div className="relative z-10 inline-flex items-end justify-center w-[1.45em] h-[1.10em] -mx-[0.17em] align-baseline -translate-y-[0.15em]">
-                                <svg viewBox="-5 0 150 120" className="w-full h-full overflow-visible" preserveAspectRatio="xMidYMax meet">
-                                    {/* Left Lamp Head */}
-                                    <path d="M 0 18 C 2 13, 34 13, 36 18 Z" fill="white"/>
-                                    <path d="M 6 18 C 9 23, 27 23, 30 18 Z" fill="#fef08a"/>
-                                    <path d="M 8 18 C 8 26, 28 26, 28 18" fill="none" stroke="#fef08a" strokeWidth="1.5" strokeLinecap="round"/>
-                                    
-                                    {/* Right Lamp Head */}
-                                    <path d="M 104 18 C 106 13, 138 13, 140 18 Z" fill="white"/>
-                                    <path d="M 110 18 C 113 23, 131 23, 134 18 Z" fill="#fef08a"/>
-                                    <path d="M 112 18 C 112 26, 132 26, 132 18" fill="none" stroke="#fef08a" strokeWidth="1.5" strokeLinecap="round"/>
-
-                                    {/* Arms */}
-                                    <path d="M 64 33 L 38 18 L 0 18" fill="none" stroke="white" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
-                                    <path d="M 76 33 L 102 18 L 140 18" fill="none" stroke="white" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
-                                    
-                                    {/* Main pole */}
-                                    <rect x="66" y="32" width="8" height="68" fill="white" />
-                                    
-                                    {/* Pole Bands */}
-                                    <rect x="65" y="50" width="10" height="2" rx="1" fill="white" />
-                                    <rect x="65" y="65" width="10" height="2" rx="1" fill="white" />
-                                    <rect x="65" y="80" width="10" height="2" rx="1" fill="white" />
-
-                                    {/* Base styling */}
-                                    <path d="M 66 100 L 62 110 L 62 120 L 78 120 L 78 110 L 74 100 Z" fill="white"/>
-                                    
-                                    {/* Top Joint */}
-                                    <rect x="64" y="30" width="12" height="6" rx="1.5" fill="white" />
-                                    <rect x="66" y="26" width="3" height="5" fill="white" rx="1" />
-                                    <rect x="71" y="26" width="3" height="5" fill="white" rx="1" />
-                                </svg>
-                                {/* Glows */}
-                                <div className="absolute left-[0%] top-[3%] w-[33%] h-[35%] rounded-full bg-yellow-400 blur-[13px] opacity-35" style={{ boxShadow: '0 0 30px 10px rgba(253,224,71,0.25)' }} />
-                                <div className="absolute right-[0%] top-[3%] w-[33%] h-[35%] rounded-full bg-yellow-400 blur-[13px] opacity-35" style={{ boxShadow: '0 0 30px 10px rgba(253,224,71,0.25)' }} />
-                            </div>
-                            <span className="text-[#2ea2f8] relative z-0">OS</span>
+                        <div className="flex items-center">
+                            <Image
+                                src="/LightOS-Logo Transparent.png"
+                                alt="LightOS Logo"
+                                width={240}
+                                height={72}
+                                className="w-[120px] md:w-[160px] h-auto object-contain"
+                            />
                         </div>
                         <p className="text-[14px] text-[#8e8e99] max-w-[280px] font-medium tracking-wide">
                             Illuminating the future of computing.
