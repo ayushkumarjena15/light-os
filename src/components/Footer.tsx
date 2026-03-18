@@ -37,7 +37,7 @@ export function Footer() {
 
     return (
         <footer ref={ref} className="relative z-[20] pt-16 pb-12 border-t border-[#1a1a24] bg-[#08080c]">
-            <div className="max-w-[1200px] mx-auto px-10">
+            <div className="max-w-[1200px] mx-auto px-6 md:px-10">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}

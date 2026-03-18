@@ -192,13 +192,13 @@ export function Hero() {
                                 alt="LightOS Logo"
                                 width={800}
                                 height={240}
-                                className="w-[300px] md:w-[500px] h-auto object-contain drop-shadow-2xl"
+                                className="w-[260px] sm:w-[300px] md:w-[500px] h-auto object-contain drop-shadow-2xl"
                                 priority
                             />
                         </h1>
                         <AnimatedText 
                             text="Powered By Autometra Technologies"
-                            className="text-[#a3a3a3] font-semibold text-[16px] md:text-[22px] tracking-wide mt-[-20px] md:mt-[-40px] drop-shadow-sm font-[var(--font-body)] text-center relative z-10"
+                            className="text-[#a3a3a3] font-semibold text-[14px] sm:text-[16px] md:text-[22px] tracking-wide mt-[-20px] md:mt-[-40px] drop-shadow-sm font-[var(--font-body)] text-center relative z-10"
                             animateBy="word"
                             animationStyle="blur-fade"
                             staggerDelay={0.12}

@@ -29,10 +29,10 @@ function AnimatedCounter({ target, suffix, label }: { target: number; suffix: st
     return (
         <div ref={ref} className="flex flex-col relative">
             <div className="flex items-baseline">
-                <span className="font-[var(--font-heading)] text-[40px] font-bold gradient-text leading-[1.1]">
+                <span className="font-[var(--font-heading)] text-[32px] sm:text-[40px] font-bold gradient-text leading-[1.1]">
                     {display}
                 </span>
-                <span className="font-[var(--font-heading)] text-[26px] font-semibold gradient-text">
+                <span className="font-[var(--font-heading)] text-[20px] sm:text-[26px] font-semibold gradient-text">
                     {suffix}
                 </span>
             </div>
@@ -53,8 +53,8 @@ export function About() {
             <div className="absolute top-0 left-0 right-0 h-px pointer-events-none" style={{ background: "linear-gradient(90deg, transparent, rgba(59,130,246,0.18), rgba(37,99,235,0.1), transparent)" }} />
             {/* Ambient glow */}
             <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 65% 50% at 20% 50%, rgba(37,99,235,0.05) 0%, transparent 60%)" }} />
-            <div ref={ref} className="max-w-[1200px] mx-auto px-6">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-[72px] items-center">
+            <div ref={ref} className="max-w-[1200px] mx-auto px-4 sm:px-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-[48px] lg:gap-[72px] items-center">
                     {/* Orb Visual */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
@@ -62,7 +62,7 @@ export function About() {
                         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
                         className="flex items-center justify-center lg:order-none order-first"
                     >
-                        <div className="relative w-[320px] h-[320px] flex items-center justify-center">
+                        <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] flex items-center justify-center">
                             {/* Ring 1 — dashed */}
                             <div
                                 className="absolute w-full h-full rounded-full border border-dashed border-[rgba(59,130,246,0.12)] animate-[orbSpin_22s_linear_infinite]"
@@ -139,7 +139,7 @@ export function About() {
                         </motion.div>
 
                         {/* Stats */}
-                        <motion.div variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }} className="flex gap-10 mt-2 flex-wrap pb-8">
+                        <motion.div variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }} className="flex gap-6 sm:gap-10 mt-2 flex-wrap pb-8">
                             <AnimatedCounter target={70} suffix="%" label="Energy Saved" />
                             <div className="w-px h-10 self-center" style={{ background: "linear-gradient(180deg, transparent, rgba(59,130,246,0.2), transparent)" }} />
                             <AnimatedCounter target={60} suffix="%" label="Lifespan Boost" />
