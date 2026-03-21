@@ -18,7 +18,7 @@ export function Showcase() {
                 const currentIndex = tabs.indexOf(current);
                 return tabs[(currentIndex + 1) % tabs.length];
             });
-        }, 2000); // changes every 2 seconds
+        }, 4000); // changes every 4 seconds
         
         return () => clearInterval(interval);
     }, [isInView, tabs]);
@@ -78,13 +78,50 @@ export function Showcase() {
                         key="network"
                         initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95 }}
                         transition={{ duration: 0.3 }}
-                        className="relative z-[10] p-6 h-full flex flex-col items-center justify-center text-center"
+                        className="relative z-[10] h-full flex flex-col"
                     >
-                        <div className="w-16 h-16 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4">
-                            <span className="text-2xl">🌍</span>
+                        <div className="relative flex-1 overflow-hidden m-4 rounded-xl border border-[#2a2a35] shadow-[0_0_30px_rgba(59,130,246,0.1)]">
+                            {/* Static Image Map Background to ensure 0ms load time */}
+                            <div className="absolute inset-0 rounded-xl overflow-hidden bg-[#101018]">
+                                <img 
+                                    src="/map-screenshot.png" 
+                                    alt="GIET University Map"
+                                    className="w-full h-full object-cover opacity-90"
+                                    style={{ filter: 'brightness(90%) contrast(110%)' }}
+                                />
+                            </div>
+                            {/* Overlay Nodes representing streetlights, absolute positioned */}
+                            <div className="absolute inset-0 pointer-events-none">
+                                {/* Red pin is in center, we'll dot lights along the roads (mostly diagonals and straight) */}
+                                {[
+                                    { t: "48%", l: "50%", active: true, pulse: true },   // Center
+                                    { t: "54%", l: "47%", active: true, pulse: false },  // Road SW
+                                    { t: "59%", l: "44%", active: false, pulse: false }, // Road SW (offline)
+                                    { t: "43%", l: "53%", active: true, pulse: true },   // Road NE
+                                    { t: "38%", l: "56%", active: true, pulse: false },  // Road NE
+                                    { t: "49%", l: "42%", active: true, pulse: false },  // Side path
+                                    { t: "51%", l: "58%", active: true, pulse: true }    // Path E
+                                ].map((node, i) => (
+                                    <motion.div 
+                                        key={i}
+                                        className="absolute w-2.5 h-2.5 rounded-full -translate-x-1/2 -translate-y-1/2 z-[5]"
+                                        style={{ top: node.t, left: node.l, background: node.active ? "#3b82f6" : "#ef4444", boxShadow: node.active ? "0 0 15px #3b82f6, 0 0 30px #3b82f6" : "0 0 15px #ef4444" }}
+                                        animate={{ scale: node.pulse ? [1, 1.5, 1] : 1, opacity: node.pulse ? [0.7, 1, 0.7] : 0.9 }}
+                                        transition={{ duration: 1.5 + (i * 0.3), repeat: Infinity }}
+                                    >
+                                        <div className={`absolute inset-0 rounded-full bg-inherit blur-[4px] opacity-60`} />
+                                    </motion.div>
+                                ))}
+                            </div>
+                            
+                            <div className="absolute bottom-4 left-4 z-[2] bg-[#0c0c10]/90 backdrop-blur-md border border-[#1a1a24] rounded-lg p-3 max-w-[240px] shadow-lg">
+                                <h3 className="text-[13px] font-bold text-white mb-1 flex items-center gap-2">
+                                    <span className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_#3b82f6]" />
+                                    Live Deployment
+                                </h3>
+                                <p className="text-[11px] text-[#8e8e99] leading-tight">Monitoring 6 smart streetlights near GIET University, Gunupur, Rayagada.</p>
+                            </div>
                         </div>
-                        <h3 className="text-lg font-bold text-white mb-2">Topological Map</h3>
-                        <p className="text-sm text-[#8e8e99] max-w-[300px]">Viewing 1,248 active streetlights across District 4. Grid stable.</p>
                     </motion.div>
                 );
             case "Energy Analytics":
@@ -152,16 +189,59 @@ export function Showcase() {
                         key="settings"
                         initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95 }}
                         transition={{ duration: 0.3 }}
-                        className="relative z-[10] p-6 h-full flex flex-col items-center justify-center text-center"
+                        className="relative z-[10] p-6 h-full flex flex-col"
                     >
-                        <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-4">
-                            <span className="text-2xl">⚙️</span>
+                        <div className="flex items-center justify-between mb-5">
+                            <div>
+                                <h3 className="text-base font-bold text-white">Grid Configuration</h3>
+                                <p className="text-[11px] text-[#8e8e99] mt-0.5">Manage automated rules for Sector 4 lighting.</p>
+                            </div>
+                            <button className="text-[11px] font-bold px-3 py-1.5 rounded-md bg-blue-600/10 text-blue-400 hover:bg-blue-600/20 border border-blue-500/20 transition-colors">
+                                Apply Changes
+                            </button>
                         </div>
-                        <h3 className="text-lg font-bold text-white mb-2">System Preferences</h3>
-                        <p className="text-sm text-[#8e8e99] max-w-[300px] mb-4">Configure global illumination schedules, thresholds, and administrative access.</p>
-                        <button className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 transition-colors text-white text-sm font-medium rounded-lg">
-                            Edit configuration
-                        </button>
+                        
+                        <div className="flex-1 space-y-3 overflow-y-auto pr-2 custom-scrollbar">
+                            {/* Setting Block 1 */}
+                            <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }} className="p-3.5 bg-[#121218]/80 backdrop-blur rounded-xl border border-[#1a1a24]">
+                                <div className="flex items-center justify-between mb-2">
+                                    <div>
+                                        <div className="text-[13px] font-bold text-[#e2e2e8]">Adaptive Illumination</div>
+                                        <div className="text-[11px] text-[#8e8e99] mt-0.5">Auto-dim lights based on local twilight sensors.</div>
+                                    </div>
+                                    <div className="w-9 h-5 rounded-full bg-blue-600 relative cursor-pointer border border-blue-500/30">
+                                        <div className="absolute right-0.5 top-0.5 w-4 h-4 bg-white rounded-full shadow-sm" />
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* Setting Block 2 */}
+                            <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }} className="p-3.5 bg-[#121218]/80 backdrop-blur rounded-xl border border-[#1a1a24]">
+                                <div className="flex items-center justify-between mb-3">
+                                    <div>
+                                        <div className="text-[13px] font-bold text-[#e2e2e8]">Sunrise Baseline (Lux)</div>
+                                        <div className="text-[11px] text-[#8e8e99] mt-0.5">Ambient light threshold for system power-down.</div>
+                                    </div>
+                                    <div className="text-[12px] font-bold text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20">450 lx</div>
+                                </div>
+                                <div className="w-full h-1.5 bg-[#2a2a35] rounded-full overflow-hidden">
+                                     <div className="w-[60%] h-full bg-blue-500 rounded-full" />
+                                </div>
+                            </motion.div>
+
+                            {/* Setting Block 3 */}
+                            <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }} className="p-3.5 bg-[#121218]/80 backdrop-blur rounded-xl border border-[#1a1a24]">
+                                <div className="flex items-center justify-between mb-2">
+                                    <div>
+                                        <div className="text-[13px] font-bold text-[#e2e2e8]">Automated Fault Dispatch</div>
+                                        <div className="text-[11px] text-[#8e8e99] mt-0.5">Alert maintenance teams immediately via SMS.</div>
+                                    </div>
+                                    <div className="w-9 h-5 rounded-full bg-[#1c1c26] relative cursor-pointer border border-[#2a2a35]">
+                                        <div className="absolute left-0.5 top-0.5 w-4 h-4 bg-[#6a6a75] rounded-full shadow-sm" />
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
                     </motion.div>
                 );
             default: return null;

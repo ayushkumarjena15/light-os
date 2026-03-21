@@ -242,10 +242,11 @@ export function Contact() {
 
                         {/* Animated Form Section */}
                         <motion.div 
+                            id="get-in-touch"
                             initial={{ opacity: 0, scale: 0.95, rotateY: -10 }}
                             animate={isInView ? { opacity: 1, scale: 1, rotateY: 0 } : {}}
                             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                            className="relative"
+                            className="relative scroll-mt-24"
                             style={{ perspective: 1200 }}
                         >
                             

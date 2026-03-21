@@ -69,9 +69,12 @@ export function Navbar() {
                     : "bg-transparent py-[18px]"
                     }`}
             >
-                <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between">
-                    {/* Desktop Links (LimelightNav) */}
-                    <div className={`hidden md:flex flex-1 justify-center transition-transform duration-500 pointer-events-auto ${scrolled ? 'scale-105' : 'scale-100'}`}>
+                <div className="max-w-[1400px] w-full mx-auto px-6 flex items-center justify-between relative">
+                    {/* Left Side: Layout Balancer */}
+                    <div className="flex-1 flex justify-start pointer-events-none"></div>
+
+                    {/* Center Navigation */}
+                    <div className={`hidden md:flex flex-initial justify-center transition-transform duration-500 pointer-events-auto ${scrolled ? 'scale-105' : 'scale-100'}`}>
                         <LimelightNav
                             items={[
                                 { id: "home", icon: <Home />, label: "Home", onClick: () => scrollTo("#hero") },
@@ -84,25 +87,30 @@ export function Navbar() {
                         />
                     </div>
 
-                    {/* Hamburger */}
-                    <button
-                        onClick={() => setOpen(!open)}
-                        className={`md:hidden flex flex-col gap-[5px] bg-transparent border-none cursor-pointer z-10 p-1 transition-all duration-500 ${scrolled ? 'opacity-0 -translate-y-4 pointer-events-none' : 'opacity-100 pointer-events-auto'}`}
-                        aria-label="Toggle Navigation"
-                    >
-                        <motion.span
-                            animate={open ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
-                            className="w-6 h-0.5 bg-[var(--color-text-primary)] rounded-sm block"
-                        />
-                        <motion.span
-                            animate={open ? { opacity: 0 } : { opacity: 1 }}
-                            className="w-6 h-0.5 bg-[var(--color-text-primary)] rounded-sm block"
-                        />
-                        <motion.span
-                            animate={open ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
-                            className="w-6 h-0.5 bg-[var(--color-text-primary)] rounded-sm block"
-                        />
-                    </button>
+                    {/* Right Side: Layout Balancer */}
+                    <div className="flex-1 flex justify-end pointer-events-none hidden md:flex"></div>
+
+                    {/* Mobile Hamburger */}
+                    <div className="flex-1 flex justify-end md:hidden">
+                        <button
+                            onClick={() => setOpen(!open)}
+                            className={`flex flex-col gap-[5px] bg-transparent border-none cursor-pointer z-10 p-1 transition-all duration-500 ${scrolled ? 'opacity-0 -translate-y-4 pointer-events-none' : 'opacity-100 pointer-events-auto'}`}
+                            aria-label="Toggle Navigation"
+                        >
+                            <motion.span
+                                animate={open ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
+                                className="w-6 h-0.5 bg-[var(--color-text-primary)] rounded-sm block"
+                            />
+                            <motion.span
+                                animate={open ? { opacity: 0 } : { opacity: 1 }}
+                                className="w-6 h-0.5 bg-[var(--color-text-primary)] rounded-sm block"
+                            />
+                            <motion.span
+                                animate={open ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
+                                className="w-6 h-0.5 bg-[var(--color-text-primary)] rounded-sm block"
+                            />
+                        </button>
+                    </div>
                 </div>
             </motion.nav>
 
